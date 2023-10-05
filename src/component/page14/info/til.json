@@ -1,0 +1,20 @@
+{
+    "uz": {
+        "resortsInfo": {
+            "resortsInfo": "Bosh sahifa",
+            "resortsInfo2": "Dam Olish Maskanlari"
+        }
+    },
+    "en": {
+        "resortsInfo": {
+            "resortsInfo": "Home",
+            "resortsInfo2": "Resorts"
+        }
+    },
+    "ru": {
+        "resortsInfo": {
+            "resortsInfo": "Главная",
+            "resortsInfo2": "Курорты"
+        }
+    }
+}

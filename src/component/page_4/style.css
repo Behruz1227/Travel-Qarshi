@@ -1,0 +1,143 @@
+.page4_main {
+    background-image: url("./bg_img.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 110% 100%;
+    width: 100%;
+    height: 100vh;
+}
+
+.page4_main-box {
+    background-color: rgb(50 50 50 / 15%);
+    width: 100%;
+    height: 100%;
+    padding-top: 14rem;
+}
+
+.page4_main-box h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: right;
+    letter-spacing: 1px;
+    line-height: 50px;
+    color: white;
+}
+
+.page4_main-box p {
+    text-align: right;
+    padding-left: 40%;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    line-height: 22px;
+}
+
+.page4_info h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #343434;
+    text-align: left;
+    margin-top: 1.2rem;
+    letter-spacing: .3px;
+}
+
+.page4_info p {
+    color: #707070;
+    margin-top: 2rem;
+    letter-spacing: -.2px;
+    line-height: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 991px) {
+    .page4_main {
+        background-size: 115% 98%;
+        background-position: bottom center;
+        height: 90vh;
+    }
+
+    .page4_main-box {
+        padding-top: 10rem;
+    }
+
+    .page4_main-box p {
+        padding-left: 15%;
+    }
+
+    .page4_info h1 {
+        font-size: 3rem;
+    }
+
+    .page4_info p {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+    .page4_main {
+        background-size: 120% 98%;
+    }
+
+    .page4_main-box p {
+        padding-left: 5%;
+    }
+
+    .page4_info p {
+        width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .page4_main {
+        height: 65vh;
+        background-size: 150% 90%;
+    }
+
+    .page4_main-box {
+        padding-top: 8rem;
+    }
+
+    .page4_main-box h2 {
+        font-size: 2.3rem;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .page4_main-box p {
+        padding: 0;
+        text-align: center;
+    }
+
+    .page4_info h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .page4_main {
+        background-size: 140% 87.5%;
+    }
+
+    .page4_main {
+        height: 60vh;
+    }
+
+    .page4_main-box {
+        padding-top: 8rem;
+    }
+
+    .page4_main-box h2 {
+        line-height: 30px;
+        font-size: 2rem;
+    }
+
+    .page4_main-box p {
+        font-size: .9rem;
+        line-height: 15px;
+    }
+}

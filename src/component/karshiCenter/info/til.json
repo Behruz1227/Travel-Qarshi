@@ -1,0 +1,23 @@
+{
+    "uz": {
+        "hotelInfo": {
+            "hotel1": "Bosh sahifa",
+            "hotel2": "Mehmonhanalar",
+            "btn": "Buyurtma Berish"
+        }
+    },
+    "en": {
+        "hotelInfo": {
+            "hotel1": "Home",
+            "hotel2": "Hotels",
+            "btn": "Place an order"
+        }
+    },
+    "ru": {
+        "hotelInfo": {
+            "hotel1": "Главная",
+            "hotel2": "Отели",
+            "btn": "Разместить заказ"
+        }
+    }
+}

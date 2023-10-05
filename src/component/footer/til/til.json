@@ -1,0 +1,77 @@
+{
+    "uz": {
+        "footer": {
+            "col1F": "SHAHARDA",
+            "col1F2": "Nima ko'rish kerak",
+            "col1F3": "Qayerga borish kerak",
+            "col1F4": "Qayerda ovqatlanish kerak",
+            "col1F5": "Qaerda qolish kerak",
+            "col1F6": "Poytaxtda 24 va 48 soat",
+            "col1F7": "Tibbiy turizm",
+            "col1F8": "Piyoda sayohatlar",
+            "col2F": "Shaharga yaqin",
+            "col2F1": "Boraboy",
+            "col2F2": "Zerenda",
+            "col2F3": "Dam olish joylari",
+            "col2F4": "MA `LUMOT",
+            "col3F": "Shahar dovoni",
+            "col3F1": "Turistik eslatma",
+            "col3F2": "Shahar lentasi",
+            "col3F3": "Kontaktlar",
+            "col3F4": "Hamkorlik dasturi",
+            "col3F5": "Turistik Call-markaz",
+            "col4F": "Yagona taksi xizmati",
+            "col4F1": "Ijtimoiy tarmoqlar"
+        }
+    },
+    "en": {
+        "footer": {
+            "col1F": "IN THE CITY",
+            "col1F2": "What to see",
+            "col1F3": "Where to go",
+            "col1F4": "Where to eat",
+            "col1F5": "Where to stay",
+            "col1F6": "24 and 48 hours in the capital",
+            "col1F7": "Medical tourism",
+            "col1F8": "Walking tours",
+            "col2F": "Close to the city",
+            "col2F1": "Goodbye",
+            "col2F2": "In Zerenda",
+            "col2F3": "Recreation areas",
+            "col2F4": "INFORMATION",
+            "col3F": "City pass",
+            "col3F1": "Tourist note",
+            "col3F2": "City tape",
+            "col3F3": "Contacts",
+            "col3F4": "Partnership program",
+            "col3F5": "Tourist call center",
+            "col4F": "The only taxi service",
+            "col4F1": "Social networks"
+        }
+    },
+    "ru": {
+        "footer": {
+            "col1F": "В ГОРОДЕ",
+            "col1F2": "Что посмотреть",
+            "col1F3": "Куда сходить",
+            "col1F4": "Где поесть",
+            "col1F5": "Где остановиться",
+            "col1F6": "24 и 48 часов в столице",
+            "col1F7": "Медицинский туризм",
+            "col1F8": "Пешие экскурсии",
+            "col2F": "РЯДОМ С ГОРОДОМ",
+            "col2F1": "Боровое",
+            "col2F2": "Зеренда",
+            "col2F3": "Зоны отдыха",
+            "col2F4": "ИНФОРМАЦИЯ",
+            "col3F": "Городской пропуск",
+            "col3F1": "Памятка туриста",
+            "col3F2": "Лента города",
+            "col3F3": "Контакты",
+            "col3F4": "Программа партнерства",
+            "col3F5": "Туристский Колл-центр",
+            "col4F": "Единая служба такси",
+            "col4F1": "Соц. сети"
+        }
+    }
+}

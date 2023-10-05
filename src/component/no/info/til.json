@@ -1,0 +1,20 @@
+{
+    "uz": {
+        "enPlase": {
+            "enPlase": "Bosh sahifa",
+            "enPlase2": "Ko'ngil Ochar joylar"
+        }
+    },
+    "en": {
+        "enPlase": {
+            "enPlase": "Home",
+            "enPlase2": "Exciting places"
+        }
+    },
+    "ru": {
+        "enPlase": {
+            "enPlase": "Главная",
+            "enPlase2": "Захватывающие места"
+        }
+    }
+}

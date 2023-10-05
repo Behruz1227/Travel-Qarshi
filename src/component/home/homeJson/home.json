@@ -1,0 +1,74 @@
+{
+    "uz": {
+        "home": {
+            "travelQash1": "Qashqadaryoga",
+            "travelQash2": "Sayohat",
+            "welcome": "Qashqadaryoga xush kelibsiz",
+            "qashSarlavha": "Qashqadaryo",
+            "qashInfo": "Qashqadaryo viloyati — Oʻzbekiston Respublikasi tarkibidagi viloyat. 1924-yil 1-noyabrda tashkil etilgan. Respublikaning janubi-gʻarbida, Qashqadaryo havzasida, Pomir-Oloy togʻ tizmasining gʻarbiy chekkasida, Amudaryo va Zarafshon daryolari, Hisor va Zarafshon tizma togʻlari orasida. Shimoli-gʻarbdan Buxoro va janubi-sharqdan Surxondaryo viloyatlari, janubi-gʻarb va gʻarbdan Turkmaniston Respublikasi, sharqdan Tojikiston Respublikasi hamda Samarqand viloyati bilan chegaradosh. Maydoni 28,6 ming km². Aholisi 3,408,300 kishi (3-oʻrin) (2022). Viloyat hokimi Murotjon Azimov (2021-yil 18-noyabrdan) Tarkibida 1ta 4 tumani (Dehqonobod, Kasbi, Kitob, Koson, Koʻkdala tumani), Mirishkor, Muborak, Nishon, Qamashi, Qarshi, Yakkabogʻ, Gʻuzor, Shahrisabz, Chiroqchi, 12 ta shahar (Beshkent, Kitob, Koson, Muborak, Tallimarjon, Chiroqchi, Shahrisabz, Yakkabogʻ, Yangi Nishon, Qamashi, Qarshi, Gʻuzor), 4 ta shaharcha (Yangi Mirishkor,Dehqonobod, Miroqi, Eski Yakkabogʻ, Pomuq), 147 ta qishloq fuqarolari yigʻini, 1064 ta qishloq bor (2005).",
+            "qashInfo2": "Qashqadaryo viloyati — Oʻzbekiston Respublikasi tarkibidagi viloyat. 1924-yil 1-noyabrda tashkil etilgan.",
+            "btn": "Batafsil",
+            "homePlace": "An'anaviy joylar",
+            "homePlace1": "Oqsaroy ",
+            "homePlace2": "Xo‘ja jarroh yodgorlik majmuasi",
+            "homePlace3": "ODINA MASJIDI",
+            "homePlace4": "Abdulazizxoʻja madrasasi",
+            "homePlace5": "Sardoba",
+            "cityHead": "Shahar yaqinida dam olish",
+            "cityInfo": "Shahar yaqinida ko'plab dam olish joylari mavjud. Mazza qilib xordiq oling",
+            "ctyBtn": "Batafsil",
+            "cafe1": "Aroma Bakery",
+            "cafe2": "Vatanparvar bog'i",
+            "cafe3": "Basseynlar",
+            "cafe4": "Oromgohlar"
+        }
+    },
+    "en": {
+        "home": {
+            "travelQash1": "travel Uz",
+            "travelQash2": "Kashkadarya",
+            "welcome": "Welcome to Kashkadarya",
+            "qashSarlavha": "Kashkadarya",
+            "qashInfo": "Kashkadarya region is a region within the Republic of Uzbekistan. It was founded on November 1, 1924. In the south-west of the republic, in the Kashkadarya basin, on the western edge of the Pamir-Aloy mountain range, between the Amudarya and Zarafshan rivers, between the mountains of the Hisar and Zarafshan ranges. It borders Bukhara to the northwest and Surkhandarya regions to the southeast, the Republic of Turkmenistan to the southwest and west, the Republic of Tajikistan and Samarkand region to the east. The area is 28.6 thousand km². Population 3,408,300 (3rd place) (2022). Governor of the region Murotjon Azimov (from November 18, 2021) Includes 1 4 districts (Dehkhanabad, Kasbi, Kitab, Koson, Kokdala district), Mirishkor, Mubarak, Nishon, Qamashi, Karshi, Yakkabog, Guzor, Shahrisabz, Chirakchi, 12 cities (Beshkent, Kitab, Koson, Mubarak, Tallimarjon, Chiraqi, Shahrisabz, Yakkabog, New Nishon, Qamashi, Karshi, Guzor), 4 towns (New Mirishkor, Dehkanabad, Miroqi, Eski Yakkabog, Pamuq), 147 village citizens' gatherings, There are 1064 villages (2005).",
+            "qashInfo2": "Kashkadarya region is a region within the Republic of Uzbekistan. It was founded on November 1, 1924.",
+            "btn": "More",
+            "homePlace": "Traditional places",
+            "homePlace1": "Oksaroy",
+            "homePlace2": "The memorial complex of the Khoja surgeon",
+            "homePlace3": "ODINA MOSQUE",
+            "homePlace4": "Abdulazizkhoja madrasa",
+            "homePlace5": "Sardoba",
+            "cityHead": "Rest near the city",
+            "cityInfo": "There are many recreation areas near the city. Have fun",
+            "ctyBtn": "More",
+            "cafe1": "Aroma Bakery",
+            "cafe2": "Park of Patriots",
+            "cafe3": "swimming pools",
+            "cafe4": "Camps"
+        }
+    },
+    "ru": {
+        "home": {
+            "travelQash1": "Поездка В",
+            "travelQash2": "Кашкадарью",
+            "welcome": "Добро пожаловать в Кашкадаря",
+            "qashSarlavha": "Кашкадарья",
+            "qashInfo": "Кашкадарьинская область — регион в составе Республики Узбекистан. Основан 1 ноября 1924 года. На юго-западе республики, в бассейне Кашкадарьи, на западной окраине Памиро-Алойского хребта, между реками Амударья и Зарафшан, между горами Хисарского и Зарафшанского хребтов. Граничит с Бухарской на северо-западе и Сурхандарьинской областями на юго-востоке, с Республикой Туркменистан на юго-западе и западе, с Республикой Таджикистан и Самаркандской областью на востоке. Площадь 28,6 тыс. км². Население 3 408 300 человек (3 место) (2022 г.). Аким области Муротджон Азимов (с 18 ноября 2021 г.) Включает 1 4 района (Дехханабад, Касби, Китаб, Косон, Кокдалинский район), Миришкор, Мубарак, Нишон, Камаши, Карши, Яккабог, Гузор, Шахрисабз, Чиракчи, 12 городов. (Бешкент, Китаб, Косон, Мубарак, Таллимарджон, Чираки, Шахрисабз, Яккабог, Новый Нишон, Камаши, Карши, Гузор), 4 города (Янги Миришкор, Дехканабад, Мироки, Эски Яккабог, Памук), 147 сельских сходов граждан, Есть 1064 села (2005 г.).",
+            "qashInfo2": "Кашкадарьинская область — регион в составе Республики Узбекистан. Основан 1 ноября 1924 года.",
+            "btn": "Более",
+            "homePlace": "Традиционные места",
+            "homePlace1": "Оксарой",
+            "homePlace2": "Мемориальный комплекс хирурга Ходжи",
+            "homePlace3": "МЕЧЕТЬ ОДИНА",
+            "homePlace4": "Медресе Абдулазизходжа",
+            "homePlace5": "Цистерна",
+            "cityHead": "Отдых рядом с городом",
+            "cityInfo": "Рядом с городом много зон отдыха. Веселиться",
+            "ctyBtn": "Подробное",
+            "cafe1": "Ароматная пекарня",
+            "cafe2": "Парк Патриотов",
+            "cafe3": "бассейны",
+            "cafe4": "Лагеря"
+        }
+    }
+}

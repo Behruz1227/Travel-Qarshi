@@ -1,0 +1,37 @@
+{
+    "uz": {
+      "nav": {
+        "nav1": "Mehmonxonalar",
+        "nav2": "Dam olish",
+        "nav3": "Restoranlar",
+        "nav4": "Ko'ngilochar",
+        "nav5": "Tarixiy",
+        "nav6": "Tabiat",
+        "nav7": "Ziyorat"
+      }
+      
+    },
+    "en": {
+      "nav": {
+        "nav1": "Hotels",
+        "nav2": "Rest",
+        "nav3": "Restaurants",
+        "nav4": "Entertainment",
+        "nav5": "History",
+        "nav6": "Nature",
+        "nav7": "Pilgrimage"
+      }
+    },
+    "ru": {
+      "nav": {
+        "nav1": "Отели",
+        "nav2": "Отдых",
+        "nav3": "Рестораны",
+        "nav4": "Развлечение",
+        "nav5": "Исторический",
+        "nav6": "Природа",
+        "nav7": "Паломничество"
+      }
+    }
+  }
+  

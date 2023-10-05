@@ -1,0 +1,23 @@
+{
+    "uz": {
+        "page3Info": {
+            "restorant": "Bosh sahifa",
+            "restorant2": "Restoranlar",
+            "btn": "Buyurtma Berish"
+        }
+    },
+    "en": {
+        "page3Info": {
+            "restorant": "Home",
+            "restorant2": "Restaurants",
+            "btn": "Place an order"
+        }
+    },
+    "ru": {
+        "page3Info": {
+            "restorant": "Главная",
+            "restorant2": "Рестораны",
+            "btn": "Разместить заказ"
+        }
+    }
+}

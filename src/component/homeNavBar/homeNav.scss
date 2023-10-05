@@ -1,0 +1,140 @@
+a {
+  text-decoration: none !important;
+  color: white !important;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-main {
+  height: 4em;
+  background-color: rgba(0, 31, 62, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    li:nth-child(1) {
+      background-color: rgba(4, 7, 21, 0.9);
+    }
+
+    li {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+      }
+    }
+
+    .nav-menu {
+      display: none;
+    }
+  }
+
+  .nav-select {
+    display: flex;
+    justify-content: center;
+    width: 90% !important;
+
+    svg {
+      fill: white;
+      width: 3em;
+      height: 3em;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    select {
+      background-color: rgba(0, 0, 0, 0);
+      width: 80px;
+      font-size: 1.2em;
+      color: white;
+      border: none;
+      cursor: pointer;
+
+      option {
+        color: black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  a, select {
+    font-size: 20px !important;
+  }
+
+  .nav-main .nav-select {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1131px) {
+  .nav-list li {
+    display: none !important;
+  }
+
+  .nav-list li:nth-child(1) {
+    display: inline-block !important;
+  }
+
+  .nav-main .nav-menu {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+    width: 20% !important;
+
+    svg {
+      width: 50%;
+      fill: white;
+    }
+  }
+  .nav-menu-bar {
+    background-color: #1D708A!important;
+    color: white!important;
+    height: 60vh!important;
+
+    .nav-media-list {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      list-style-type: none;
+
+      li {
+        padding: .8em 0;
+        border-bottom: 1px black solid;
+        display: grid;
+        columns: auto;
+      }
+
+      .nav-select select{
+        background-color: #1D708A!important;
+        border: none;
+        color: white;
+      }
+    }
+  }
+} 
+@media only screen and (max-width: 600px) {
+  .nav-main .nav-menu {
+    svg {
+      width: 80%;
+      fill: white;
+    }
+  }
+}

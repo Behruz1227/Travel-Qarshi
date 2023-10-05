@@ -1,0 +1,17 @@
+{
+    "uz": {
+        "long": {
+            "name": "Ziyorat turizm"
+        }
+    },
+    "en": {
+        "long": {
+            "name": "Pilgrimage tourism"
+        }
+    },
+    "ru": {
+        "long": {
+            "name": "Паломнический туризм"
+        }
+    }
+}

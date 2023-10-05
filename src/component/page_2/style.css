@@ -1,0 +1,17 @@
+.page2_bg {
+    background-image: url("./bg.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 120% 120%;
+    padding-top: 12rem;
+    padding-bottom: 5rem;
+}
+
+.page2_bg li {
+    list-style: none;
+    font-size: 1rem;
+    line-height: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

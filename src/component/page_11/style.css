@@ -1,0 +1,132 @@
+.page11_main {
+    background-image: url("./images/backgroundImage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130% 120%;
+    width: 100%;
+}
+
+.page11_box {
+    background-color: rgb(50 50 50 / 50%);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+
+.page11_blur {
+    background-color: rgb(50 50 50 / 80%);
+    padding-top: 7.5rem;
+    padding-bottom: 2.7rem;
+}
+
+.page11_blur h2 {
+    font-size: 3.3rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+    color: white;
+}
+
+.page11_blur p {
+    width: 75%;
+    font-size: .9rem;
+    line-height: 20px;
+    letter-spacing: -.2px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.page11_images {
+    padding-top: 8rem;
+}
+
+.page11_images div {
+    height: 330px;
+    overflow: hidden;
+    border-radius: 80px;
+    margin-bottom: 2rem;
+}
+
+.page11_images img {
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+
+    &:hover {
+        transform: scale(1.1);
+        filter: brightness(.7);
+        cursor: pointer;
+    }
+}
+
+.page11_images h3 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+    margin-top: .8rem;
+}
+
+.page11_images p {
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .2px;
+    line-height: 17px;
+    margin-top: 1rem;
+    width: 90%;
+}
+
+.page11_info {
+    margin-top: 5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -.3px;
+    line-height: 15px;
+}
+
+@media (max-width: 991px) {
+    .page11_main {
+        background-size: 150% 110%;
+    }
+
+    .page11_images div {
+        height: 220px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page11_main {
+        background-size: 150% 100%;
+    }
+
+    .page11_images div {
+        height: 240px;
+    }
+
+    .page11_info {
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page11_main {
+        background-position: bottom center;
+        background-size: 200% 100%;
+    }
+
+    .page11_blur h2 {
+        font-size: 2.7rem;
+    }
+
+    .page11_blur p {
+        width: 90%;
+    }
+
+    .page11_images div {
+        height: 260px;
+    }
+
+    .page11_info {
+        margin-top: 2rem;
+        padding-right: 1rem;
+    }
+}

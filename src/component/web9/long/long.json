@@ -1,0 +1,26 @@
+{
+    "uz": {
+        "long9": {
+            "name": "Aroma Bakery",
+            "info": "Qahvaxona Aroma Bakery & Cafe quyidagi manzil boʻyicha Qashqadaryo viloyati, Qarshi, Islom Karimov koʻchasi, 55, ☎️ +998 95 505 5535.",
+            "cardInfo": "Bizning kamtarona cafe mizga marxamat!!!",
+            "btn": "o'tish"
+        }
+    },
+    "en": {
+        "long9": {
+            "name": "Aroma Bakery",
+            "info": "Cafe Aroma Bakery & Cafe at the following address, Kashkadarya region, Karshi, Islam Karimov street, 55, ☎️ +998 95 505 5535.",
+            "cardInfo": "Thank you to our humble cafe!!!",
+            "btn": "transition"
+        }
+    },
+    "ru": {
+        "long9": {
+            "name": "Ароматная пекарня",
+            "info": "Кафе Aroma Bakery & Cafe по адресу, Кашкадарьинская область, г. Карши, улица Ислама Каримова, 55, ☎️ +998 95 505 5535.",
+            "cardInfo": "Спасибо нашему скромному кафе!!!",
+            "btn": "переход"
+        }
+    }
+}

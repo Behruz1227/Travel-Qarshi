@@ -1,0 +1,95 @@
+.web17-top {
+    width: 100%;
+    height: 30rem;
+    background-image: url("https://www.samdu.uz/upload/cover-images/63031105ca19b-63031105ca19d-63031105ca19e-63031105ca19f.png");
+    background-position: center ;
+    background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
+}
+.web17-main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.web17-color {
+    width: 100%;
+    height: 30rem;
+    background-color: #0000005f;
+    color: #fffbfb;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    
+}
+
+.web17-color>h1 {
+    text-align: center;
+    transform: translateY(7rem);
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.web17-img {
+    background: #E4EFC0;
+    background: -webkit-linear-gradient(to right, #E4EFC0 0%, #97A65B 50%, #CFCA82 100%);
+    background: -moz-linear-gradient(to right, #E4EFC0 0%, #97A65B 50%, #CFCA82 100%);
+    background: linear-gradient(to right, #E4EFC0 0%, #97A65B 50%, #CFCA82 100%);
+    padding-bottom: 8%;
+    display: flex;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #7a1818b3;
+}
+
+.web17-img>h1 {
+    padding-top: 10%;
+    color: #000000;
+    font-size: 5vw;
+    font-weight: 700;
+}
+
+.web17-img p {
+    padding-left: 10%;
+    margin-top: 3rem;
+    width: 70%;
+    color: #5e0b0b;
+    font-size: 1vmax;
+}
+.saroy-img {
+    width: 80%;
+    height: 20rem; 
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    transition: 0.5s;
+    &:hover{
+        border-radius: 2rem;
+        filter: brightness(70%);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+
+    .web17-img p {
+        font-size: .7rem;
+    }
+
+    .web17-color {
+        padding-top: 4rem;
+        color: #ffffff;
+    }
+
+    .web17-color>h1 {
+        font-size: 3.5rem;
+    }
+
+    .web17-top {
+        width: 100%;
+    }
+
+    .web17-img {
+        background-position: bottom left;
+    }
+}

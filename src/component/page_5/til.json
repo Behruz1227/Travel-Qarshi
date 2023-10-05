@@ -1,0 +1,20 @@
+{
+    "uz": {
+        "natureInfo": {
+            "title": "Bosh sahifa",
+            "name": "Tabiat"
+        }
+    },
+    "en": {
+        "natureInfo": {
+            "title": "Home",
+            "name": "Nature"
+        }
+    },
+    "ru": {
+        "natureInfo": {
+            "title": "Главная",
+            "name": "Природа"
+        }
+    }
+}

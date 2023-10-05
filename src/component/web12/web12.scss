@@ -1,0 +1,77 @@
+.home-web12-page {
+  background-image: url("./web-12.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+
+  .web12-one-home {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.427);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    p {
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 22px;
+
+      &:nth-child(1) {
+        font-size: 6rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.page12_card {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(.7);
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .web12-one-home {
+    padding: .5rem !important;
+  }
+}
+
+@media (max-width: 710px) {
+  .web12-one-home {
+    padding-top: 4rem !important;
+    p {
+      font-size: .9rem !important;
+      line-height: 15px !important;
+
+      &:nth-child(1) {
+        font-size: 3rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .padding_class {
+    padding-right: 0 !important;
+    padding-left: 1.4rem !important;
+  }
+}

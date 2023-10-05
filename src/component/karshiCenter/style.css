@@ -1,0 +1,207 @@
+/* .karshi_background {
+    background-image: url("./backgroundImage.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 160% 100%;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+} */
+
+.page13__glavni {
+    background-image: url("https://visitastana.kz/local/templates/.default/img/about-city/catalog-stay.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+
+.karshi_background h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 80px;
+    color: white;
+    text-align: center;
+}
+
+.karshi_background p {
+    text-align: left;
+    padding-left: 0;
+    margin-top: 2.7rem;
+    width: 35%;
+    color: black;
+    font-size: .9rem;
+    letter-spacing: .2px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.page13_hotel-info {
+    padding-bottom: 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+    color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: #000000bd;
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+}
+
+.page13_hover {
+    overflow: hidden;
+    height: 300px;
+}
+
+.page13_hover img {
+    transition: all .4s;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+        transform: scale(1.1);
+        filter: brightness(.7);
+        cursor: pointer;
+    }
+}
+
+.page13_hotel-info h2 {
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    color: #2a2a2ad8;
+    transition: all .4s;
+    padding-left: .5rem;
+
+    &:hover {
+        color: rgba(0, 0, 0, 0.884);
+        cursor: pointer;
+    }
+}
+
+.page13_hotel-info p {
+    width: 95%;
+    color: white;
+    margin-top: .5rem;
+    transition: all .4s;
+    padding-left: .5rem;
+
+    &:hover {
+        color: aqua;
+        cursor: pointer;
+    }
+}
+
+.karshi_info {
+    width: 90% !important;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1200px) {
+    .karshi_background p {
+        width: 50%;
+    }
+
+    .page13_hover {
+        height: 300px;
+    }
+
+    .page13_hover img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .page13_hotel-info h2 {
+        font-size: 2rem;
+    }
+
+    .page13_hotel-info p {
+        width: 95%;
+    }
+}
+
+@media (max-width: 991px) {
+    .karshi_background p {
+        width: 70%;
+    }
+
+    .page13_hover {
+        height: 350px;
+    }
+
+    .page13_hotel-info p {
+        width: 95%;
+    }
+}
+
+@media (max-width: 767px) {
+    .karshi_background p {
+        width: 100%;
+    }
+
+    .karshi_background h1 {
+        font-size: 3rem;
+    }
+
+    .page13__glavni {
+        background-size: cover;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .page13_container {
+        padding-right: 0 !important;
+        padding-left: 1.1rem !important;
+    }
+
+    .page13_hover {
+        height: 300px;
+    }
+
+    .karshi_background h1 {
+        font-size: 2.7rem;
+        font-weight: 700;
+    }
+
+    .karshi_background p {
+        margin-top: 2rem;
+    }
+
+    .karshi_info {
+        margin-left: .2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .page13_hover {
+        height: 240px;
+    }
+
+    .page13_container h1 {
+        font-size: 2rem;
+    }
+
+    .page13_hotel-info h2 {
+        font-size: 1.7rem;
+    }
+
+    .page13_hotel-info p {
+        margin-top: 0;
+    }
+
+    .karshi_background h1 {
+        font-size: 2rem;
+    }
+}

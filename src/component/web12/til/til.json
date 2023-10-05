@@ -1,0 +1,23 @@
+{
+    "uz": {
+        "til12": {
+            "title": "Basseyn",
+            "info": "Qarshi shahrida OCEAN aquapark majmuasining ochilishi bo‘lib o‘tdi. Kosonlik tadbirkor tomonidan qariyb 20 mlrd. so‘mga qad rostlagan ushbu markaz bir vaqtning o‘zida 500 nafardan ortiq mijozni qabul qilish imkniyatiga ega.Markaz hududida favvoralar, yuvinish xonasi, zamonaviy kiyinish xonasi, bolalar, kattalar uchun va oilaviy basseynlar, choyxona, kafe va barlar joy olgan. Suv gorkalari tashkil etilgan, suzish havzalari ham turli yoshdagi aholi qatlamini inobatga olgan holda barpo qilingan.Shuningdek, suv havzalarining har biri eng zamonaviy filterlar bilan jihozlangan va bu suv doimo toza hamda tiniq bo‘lishini ta’minlaydi. Bundan tashqari, park hududida Yashil makon umummilliy loyihasiga ham alohida e’tibor qaratilib, dekorativ va soya beruvchi daraxt ko‘chatlarini ham ko‘paytirish rejalashtirilgan.",
+            "btn": "Ko'rish"
+        }
+    },
+    "en": {
+        "til12": {
+            "title": "swimming pool",
+            "info": "OCEAN aquapark complex was opened in Karshi. About 20 bln. This center is able to receive more than 500 customers at the same time. The center has fountains, a washroom, a modern dressing room, children's, adult and family pools, a tea room, a cafe and bars. Water fountains and swimming pools have been built taking into account the population of different ages. Also, each of the water pools is equipped with the most modern filters, which ensures that the water is always clean and clear. In addition, special attention is paid to the national project Green Space in the park area, and it is planned to increase decorative and shade trees.",
+            "btn": "View"
+        }
+    },
+    "ru": {
+        "til12": {
+            "title": "бассейн",
+            "info": "В Карши открылся комплекс «Аквапарк ОКЕАН». Около 20 млрд. Этот центр способен принять одновременно более 500 клиентов.Есть фонтаны, умывальники, современные раздевалки, детский, взрослый и семейный бассейны, чайная комната, кафе и бары. Фонтаны и бассейны построены с учетом населения разного возраста, а также каждый из бассейнов оснащен самыми современными фильтрами, что гарантирует, что вода всегда чистая и прозрачная. Кроме того, особое внимание уделяется национальному проекту «Зеленое пространство» в парковой зоне, планируется увеличить количество декоративных и тенистых деревьев.",
+            "btn": "Вид"
+        }
+    }
+}

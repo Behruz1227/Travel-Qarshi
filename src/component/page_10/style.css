@@ -1,0 +1,118 @@
+.page10_main {
+    background-color: white;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+
+.page10_box {
+    background-color: #bab9b9;
+    width: 100%;
+    padding-top: 7.5rem;
+    padding-bottom: 3.2rem;
+}
+
+.page10_box h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -.2px;
+    color: white;
+}
+
+.page10_box p {
+    font-size: .9rem;
+    font-weight: 500;
+    width: 60%;
+    margin-top: 1.7rem;
+    line-height: 18px;
+}
+
+.page10_product {
+    transition: all .5s;
+    border-radius: 30px;
+    height: 100%;
+
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+
+.page10_product div {
+    overflow: hidden;
+    border-radius: 30px;
+    height: 300px;
+}
+
+.page10_product img {
+    transition: all .4s;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        filter: brightness(.7);
+    }
+}
+
+.page10_product h3 {
+    color: #292929;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: .7rem;
+    margin-left: .3rem;
+    transition: all .3s;
+
+    &:hover {
+        color: yellowgreen;
+    }
+}
+
+.page10_product p {
+    color: #747373;
+    font-size: .85rem;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -.2px;
+    margin-left: .3rem;
+    margin-top: 1rem;
+    transition: all .3s;
+
+    &:hover {
+        color: aqua;
+    }
+}
+
+@media (max-width: 767px) {
+    .page10_box h1 {
+        margin-left: 2rem;
+    }
+
+    .page10_box p {
+        width: 80%;
+        margin-left: 2.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page10_box h1 {
+        margin-left: 0;
+        font-size: 2.7rem;
+    }
+
+    .page10_box p {
+        width: 90%;
+        margin-left: 0.2rem;
+    }
+
+    .page10_product {
+        box-shadow: none !important;
+    }
+
+    .page10_product h3 {
+        font-size: 1.7rem;
+    }
+
+    .page10_container {
+        padding-right: 0 !important;
+    }
+}

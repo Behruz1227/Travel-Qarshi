@@ -1,0 +1,65 @@
+.navbar-menu__brend {
+    background-color: #001F3E;
+    z-index: 1000;
+    font-family: 'Titillium Web';
+    text-align: center;
+    font-weight: 700;
+}
+
+.bg__collepse {
+    background-color: rgb(4, 95, 186) !important;
+    color: rgb(4, 95, 186) !important;
+}
+
+.navbar-menu__brend a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: .3px;
+    line-height: 50px;
+    font-weight: 500;
+    transition: all .5s;
+    padding-right: 3rem;
+
+    &:hover {
+        color: #FFCD1E;
+    }
+}
+
+@media (max-width: 1300px) {
+    .navbar-menu__brend a {
+        letter-spacing: 0;
+        font-size: 1rem;
+        padding-right: 2.5rem;
+    }
+}
+
+@media (max-width: 1117px) {
+    .navbar-menu__brend a {
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 1053px) {
+    .navbar-menu__brend a {
+        padding-right: 1.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .width__nav {
+        width: 5rem !important;
+        background-color: rgba(0, 31, 62, 0.9) !important;
+        color: white !important;
+    }
+
+    .__language {
+        display: flex; 
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    .nav__collapse li {
+        text-align: center !important;
+    }
+}

@@ -1,0 +1,104 @@
+.page5_one {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+}
+
+.page5__one-shadow {
+    height: 100%;
+    width: 100%;
+    transition: all .4s;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-bottom: 1rem;
+    color: white;
+
+    &:hover {
+        cursor: pointer;
+        color: #000000a4;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+}
+
+.page5_images {
+    overflow: hidden;
+    height: 300px;
+}
+
+.page5_images img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+
+    &:hover {
+        transform: scale(1.1);
+        filter: brightness(.5);
+    }
+}
+
+.page5_one h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    color: #404040;
+    margin-top: 1.5rem;
+}
+
+.page5_one h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: .5rem;
+    color: #0000009d;
+    transition: all .4s;
+    padding-left: .5rem;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.page5_one p {
+    font-size: .95rem;
+    color: #757575;
+    font-weight: 500;
+    line-height: 20px;
+    padding-right: 3rem;
+    margin-top: 1rem;
+}
+
+.page5_two {
+    background-image: url("./img/naqshBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .page5_one {
+        background-image: url("./img/naqshBgTwo.png");
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 767px) {
+    .page5_one {
+        background-size: 80% 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .page5_container {
+        padding-right: 0 !important;
+    }
+
+    .page5_one {
+        background-size: 85% 100%;
+    }
+
+    .page5_one h1 {
+        font-size: 2.2rem;
+    }
+}

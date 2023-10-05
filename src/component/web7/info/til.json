@@ -1,0 +1,20 @@
+{
+    "uz": {
+        "tarix": {
+            "tarix": "Bosh sahifa",
+            "tarix2": "Tarixiy Joylar"
+        }
+    },
+    "en": {
+        "tarix": {
+            "tarix": "Home",
+            "tarix2": "Historic Places"
+        }
+    },
+    "ru": {
+        "tarix": {
+            "tarix": "Главная",
+            "tarix2": "Исторические места"
+        }
+    }
+}
