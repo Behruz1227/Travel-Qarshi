@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import "./style.css";
 import { Button, Card, CardBody, CardText, Col, Container, Row } from 'reactstrap';
 import {
-    appStoreBtn, googlePlayBtn, gul1, gul2, gul3, gul4, icon2,
+    appStoreBtn, googlePlayBtn, icon2,
     icon4, icon5, icon6, qrCode1, qrCode2, travel1, travel2, travel3,
     travel4, travel5, travelQRcode
 } from './img/image';
@@ -12,6 +12,7 @@ import Aos from 'aos';
 import axios from 'axios';
 import { apiTravel } from "../api/api";
 import language from "./homeJson/home.json";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function Home() {
 
@@ -25,7 +26,7 @@ function Home() {
     useEffect(() => {
         Aos.init();
         getPlaceCategory();
-        axios.get(apiTravel + "place-categories/4/").then(res => setPlaceCategoryOne(res.data));
+        axios.get(apiTravel + "place-categories/9/").then(res => setPlaceCategoryOne(res.data));
 
         if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'UZ');
         let lang = localStorage.getItem('lang');
@@ -58,8 +59,6 @@ function Home() {
         });
         setPlaceCategory(list)
     }
-
-    console.log(placeCategory);
 
     // links function
     const page9 = () => document.getElementById("page9").click();
@@ -94,6 +93,8 @@ function Home() {
     return (
         <div style={{ overflow: "hidden" }}>
 
+            <NavbarMenu />
+
             <Link to="/historical/places" id='page7'></Link>
             <Link to="/nature" id='page8'></Link>
             <Link to="/Aroma Bakery" id='page9'></Link>
@@ -123,15 +124,17 @@ function Home() {
                             {/* <p data-aos="fade-right" data-aos-duration="2000"></p> */}
                             <Row className='text-start category-row' data-aos="zoom-in" data-aos-duration="2000">
                                 {placeCategory && placeCategory.map((item, i) =>
+                                    // item.id !== 9 ?
                                     <Col className='d-none d-md-inline d-lg-flex home_radial-img' key={i}>
                                         <div onClick={() => goPage(i)}>
                                             <img className='img-fluid' src={item.image} alt="img1" />
                                         </div>
                                         <p>{item.title}</p>
                                     </Col>
+                                    // : ""
                                 )}
                                 <Col className='d-md-none col-6 col-sm-3 col-lg-2 home_radial-img'>
-                                    <div onClick={() => goPage(1)}>
+                                    <div onClick={() => goPage(6)}>
                                         <img className='img-fluid' src={placeCategoryOne.image} alt="img1" />
                                     </div>
                                     <p>{placeCategoryOne.title}</p>
@@ -147,7 +150,7 @@ function Home() {
             <div className="cardsColor pb-5">
                 <Container >
                     <Row className='pt-5'>
-                            {/* <img className='mt-5 mb-5'  src={cityImg} alt="" /> */}
+                        {/* <img className='mt-5 mb-5'  src={cityImg} alt="" /> */}
                         {/* <Col className='d-none d-lg-inline col-lg-5 col-sm-1' data-aos="fade-left" data-aos-duration="2000">
                             <div className='text-start'>
                                 <img className='kash_img-two' src={gul2} alt="image2" />

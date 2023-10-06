@@ -15,7 +15,6 @@ import Web18 from "./component/web18/Web18";
 import Web19 from "./component/web19/Web19";
 import Web20 from "./component/web20/Web20";
 import Web21 from "./component/web21/Web21";
-import NavbarMenu from "./component/navbar/NavbarMenu";
 import Info from "./component/karshiCenter/info/Info";
 import InfoRes from "./component/page_3/info/Info";
 import InfoResorts from "./component/page14/info/InfoResorts";
@@ -25,6 +24,7 @@ import InfoNature from "./component/page_5/info/InfoNature";
 import HotelAdmin from "./component/admin/mehmonxonalar/HotelAdmin";
 import RestuarantAdmin from "./component/admin/restoranlar/Restaurant";
 import Ziyorat from "./component/ziyorat/Ziyorat";
+import InfoZiyorat from "./component/ziyorat/info/Info";
 
 // import Page2 from "./component/page_2/Page2";
 // import Page4 from "./component/page_4/Page4";
@@ -34,7 +34,6 @@ import Ziyorat from "./component/ziyorat/Ziyorat";
 function App() {
     return (
         <>
-            <NavbarMenu />
             <Routes>
 
                 {/* admin panel */}
@@ -74,6 +73,7 @@ function App() {
                 <Route path="entertainment/places/info" element={<InfoEnPlase />} />
                 <Route path="historical/places/info" element={<InfoTarix />} />
                 <Route path="nature/info" element={<InfoNature />} />
+                <Route path="ziyorat/info" element={<InfoZiyorat />} />
             </Routes>
         </>
     )

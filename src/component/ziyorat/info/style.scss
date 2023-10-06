@@ -1,10 +1,11 @@
-.page13__main-info {
+.ziyorat__main-info {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center bottom;
     width: 100%;
-    height: 75vh;
+    height: 85vh;
 
-    .info__main-box {
+    .ziyorat__main-box {
         background-color: #23232377;
         height: 100%;
         width: 100%;
@@ -39,7 +40,7 @@
     }
 }
 
-.info__description {
+.ziyorat__description {
     margin-top: 4rem;
 
     p {
@@ -50,7 +51,7 @@
         margin-top: 1rem;
     }
 
-    .hotel__info-images {
+    .ziyorat__info-images {
         margin-top: 1rem;
 
         div {
@@ -73,7 +74,7 @@
 }
 
 @media (max-width: 611px) {
-    .info__main-box {
+    .ziyorat__main-box {
         p {
             font-size: 1rem !important;
         }
@@ -85,7 +86,11 @@
 }
 
 @media (max-width: 576px) {
-    .info__main-box {
+    .ziyorat__main-info {
+        height: 50vh;
+    }
+
+    .ziyorat__main-box {
         p {
             font-size: 1rem !important;
         }
@@ -95,7 +100,7 @@
         }
     }
 
-    .info__description {
+    .ziyorat__description {
         padding-right: 0 !important;
         padding-left: 1.4rem !important;
     }

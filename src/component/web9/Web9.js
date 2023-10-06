@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import language from "./long/long.json";
 import { useEffect, useState } from "react";
 import FooTer from "../footer/FooTer";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 
 function Web9() {
@@ -22,9 +23,8 @@ function Web9() {
 
   return (
     <div className='home-web9-page'>
-
+      <NavbarMenu />
       <Link target="_blank" to="https://yandex.uz/maps/org/aroma_bakery_cafe/34152802741/?ll=65.791892%2C38.830392&z=16" id="aroma"></Link>
-
       <div className="web9-one-home">
         <p className="pt-3" data-aos="fade-down" data-aos-duration="2000">{lang.name}</p>
         <p className="pt-5" data-aos="fade-up" data-aos-duration="2000">{lang.info}</p>

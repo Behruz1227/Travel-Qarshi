@@ -8,23 +8,24 @@ import Aos from "aos";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import FooTer from "../footer/FooTer";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function Ziyorat() {
 
-    const [hotel, setHotel] = useState([]);
+    const [ziyorat, setZiyorat] = useState([]);
     const [lang, setLang] = useState('');
 
     useEffect(() => {
         Aos.init();
-        getHotels();
+        getZiyorat();
 
         if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'UZ');
         let lang = localStorage.getItem('lang');
         setLang(lang === 'UZ' ? language.uz.long : lang === 'EN' ? language.en.long : language.ru.long)
     }, []);
 
-    // getHotel
-    async function getHotels() {
+    // getZiyorat
+    async function getZiyorat() {
         let list = [];
         await axios.get(apiTravel + "places/?category=9").then(res => {
 
@@ -49,16 +50,15 @@ function Ziyorat() {
                 });
             }
         });
-        setHotel(list)
+        setZiyorat(list)
     }
 
-    const goHotelInfoPage = () => document.getElementById("hotelInfo").click();
+    const goZiyoratInfoPage = () => document.getElementById("ziyoratInfo").click();
 
     return (
         <div className="ziyorat_background">
-
-            <Link to="info" id="hotelInfo"></Link>
-
+            <NavbarMenu />
+            <Link to="info" id="ziyoratInfo"></Link>
             <div className="ziyorat__glavni">
                 <div className="qora">
                     <h1 data-aos="fade-right" data-aos-duration="2000">{lang.name}</h1>
@@ -66,10 +66,10 @@ function Ziyorat() {
             </div>
             <Container className="ziyorat_container mt-5">
                 <Row className="w-100">
-                    {hotel.length && hotel.map((item, i) =>
+                    {ziyorat.length && ziyorat.map((item, i) =>
                         <Col onClick={() => {
-                            sessionStorage.setItem("hotelId", item.id);
-                            goHotelInfoPage();
+                            sessionStorage.setItem("ziyoratId", item.id);
+                            goZiyoratInfoPage();
                         }} className="col-12 col-md-6 col-lg-4 mt-4" key={i} data-aos="fade-up" data-aos-duration="2000">
                             <div className="ziyorat_hotel-info">
                                 <div className="ziyorat_hover">

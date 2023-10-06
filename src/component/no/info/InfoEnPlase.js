@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FooTer from "../../footer/FooTer";
 import { Col, Row } from "reactstrap";
 import language from "./til.json";
+import NavbarMenu from "../../navbar/NavbarMenu";
 
 function InfoEnPlase() {
 
@@ -57,6 +58,7 @@ function InfoEnPlase() {
 
     return (
         <div>
+            <NavbarMenu />
             {/* {enPlase.booking_link && enPlase.booking_link
                 ? <Link to={enPlase.booking_link} id="booking__link" target="_blank"></Link>
                 : <Link to={enPlase.booking_link} id="booking__link"></Link>

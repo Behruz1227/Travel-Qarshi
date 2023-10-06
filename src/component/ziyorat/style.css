@@ -9,7 +9,7 @@
 } */
 
 .ziyorat__glavni {
-    background-image: url("http://marifat.uz/images/articles/5615/primary-large.jpg");
+    background-image: url("./bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% ;
@@ -19,8 +19,9 @@
 }
 .qora {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.325);
-    height: 100%;
+    background-color: #00000075;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .ziyorat_background h1 {

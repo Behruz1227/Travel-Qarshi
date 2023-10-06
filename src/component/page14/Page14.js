@@ -10,6 +10,7 @@ import language from "./long/long14.json";
 import { Link } from 'react-router-dom';
 import FooTer from "../footer/FooTer";
 import { Icon } from '@iconify/react';
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Page14() {
 
@@ -57,6 +58,7 @@ function Page14() {
 
     return (
         <div className="page14_container mb-5">
+            <NavbarMenu />
             <Link to="info" id='resorts'></Link>
             <div className='home-web14-page'>
                 <div className="web14-one-home">

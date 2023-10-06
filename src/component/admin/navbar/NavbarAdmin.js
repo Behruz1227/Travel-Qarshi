@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 // import { byId } from '../api/api';
 // import logo from "./logo.gif";
 
-function NavbarMenu() {
+function NavbarAdmin() {
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -54,4 +54,4 @@ function NavbarMenu() {
         </div>
     );
 }
-export default NavbarMenu;
+export default NavbarAdmin;

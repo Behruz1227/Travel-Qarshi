@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import FooTer from "../../footer/FooTer";
 import { Col, Row } from "reactstrap";
 import language from "./til.json";
+import NavbarMenu from "../../navbar/NavbarMenu";
 
 function TarixInfo() {
 
@@ -54,6 +55,7 @@ function TarixInfo() {
 
     return (
         <div>
+            <NavbarMenu />
             <div className="page7__main-info" style={{ backgroundImage: `url(${historicalInfo.image})` }}>
                 <div className="info7__main-box">
                     <p>

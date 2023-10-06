@@ -3,6 +3,7 @@ import language from "./long/long.json";
 import { useEffect, useState } from "react";
 import FooTer from "../footer/FooTer";
 import { Col, Row } from "reactstrap";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function Web19() {
 
@@ -16,6 +17,7 @@ function Web19() {
 
   return (
     <>
+      <NavbarMenu />
       <div className="web19-top">
         <div className=' web19-color'>
           <h1>{lang.name}</h1>

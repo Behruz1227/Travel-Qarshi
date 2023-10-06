@@ -5,6 +5,7 @@ import img_1 from "./images/img_1.png";
 import img_2 from "./images/img_2.png";
 import language from "./til/til.json";
 import FooTer from "../footer/FooTer";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 
 function Page11() {
@@ -19,6 +20,7 @@ function Page11() {
 
     return (
         <div className="page11_main">
+            <NavbarMenu />
             <div className="page11_box">
                 <div className="page11_blur">
                     <Container>

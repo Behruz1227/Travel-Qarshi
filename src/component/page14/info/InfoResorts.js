@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 import FooTer from "../../footer/FooTer";
 import language from "./til.json";
+import NavbarMenu from "../../navbar/NavbarMenu";
 
 function InfoResorts() {
 
@@ -57,6 +58,7 @@ function InfoResorts() {
 
     return (
         <div>
+            <NavbarMenu />
             {resortsInfo.booking_link && resortsInfo.booking_link
                 ? <Link to={resortsInfo.booking_link} id="booking__link" target="_blank"></Link>
                 : <Link to={resortsInfo.booking_link} id="booking__link"></Link>

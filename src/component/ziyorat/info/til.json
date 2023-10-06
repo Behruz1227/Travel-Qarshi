@@ -2,22 +2,19 @@
     "uz": {
         "hotelInfo": {
             "hotel1": "Bosh sahifa",
-            "hotel2": "Mehmonhanalar",
-            "btn": "Buyurtma Berish"
+            "hotel2": "Ziyoratgohlar"
         }
     },
     "en": {
         "hotelInfo": {
             "hotel1": "Home",
-            "hotel2": "Hotels",
-            "btn": "Place an order"
+            "hotel2": "Shrines"
         }
     },
     "ru": {
         "hotelInfo": {
             "hotel1": "Главная",
-            "hotel2": "Отели",
-            "btn": "Разместить заказ"
+            "hotel2": "Святыни"
         }
     }
 }

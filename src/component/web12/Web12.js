@@ -6,6 +6,7 @@ import img2 from "./img2.jpg";
 import language from "./til/til.json";
 import { Link } from 'react-router-dom';
 import FooTer from "../footer/FooTer";
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Web12() {
 
@@ -21,6 +22,7 @@ function Web12() {
 
   return (
     <div>
+      <NavbarMenu />
       <Link to="https://www.youtube.com/watch?v=lzA52i5VG48" target='_blank' id='basseynId'></Link>
       <div className='home-web12-page'>
         <div className="web12-one-home">
@@ -79,7 +81,7 @@ function Web12() {
           </Col>
         </Row>
       </Container>
-      <FooTer /> 
+      <FooTer />
     </div>
   )
 }

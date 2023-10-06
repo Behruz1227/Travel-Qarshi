@@ -3,6 +3,7 @@ import "./web17.scss";
 import language from "./long/long17.json";
 import FooTer from "../footer/FooTer";
 import { Col, Row } from 'reactstrap';
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Web17() {
 
@@ -16,6 +17,7 @@ function Web17() {
 
   return (
     <div className='w-100'>
+      <NavbarMenu />
       <div className='web17-main'>
         <div className="web17-top">
           {/* <div className='web17-xira'> */}
@@ -29,7 +31,7 @@ function Web17() {
       <div className="web17-img ps-5">
         <Row className='w-100'>
           <Col className='col-12 col-md-6'>
-          <p>{lang.text1}</p>
+            <p>{lang.text1}</p>
           </Col>
           <Col className='col-12 col-md-6'>
             <div className='saroy-img'>
@@ -42,12 +44,12 @@ function Web17() {
             </div>
           </Col>
           <Col className='col-12 col-md-6'>
-          <p>{lang.text2}</p>
+            <p>{lang.text2}</p>
           </Col>
-          
-          
+
+
         </Row>
-        
+
       </div>
       <FooTer />
     </div>

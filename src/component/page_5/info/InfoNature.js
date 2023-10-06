@@ -6,6 +6,7 @@ import "./style.scss";
 import { Col, Row } from "reactstrap";
 import FooTer from "../../footer/FooTer";
 import language from "../til.json";
+import NavbarMenu from "../../navbar/NavbarMenu";
 
 function InfoNature() {
 
@@ -54,6 +55,7 @@ function InfoNature() {
 
     return (
         <div>
+            <NavbarMenu />
             <div className="page5__main-info" style={{ backgroundImage: `url(${natureInfo.image})` }}>
                 <div className="info5__main-box">
                     <p>

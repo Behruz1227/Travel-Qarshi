@@ -7,6 +7,7 @@ import language from "./long/longHotel.json";
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import FooTer from '../footer/FooTer';
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Web7() {
 
@@ -53,35 +54,36 @@ function Web7() {
 
   return (
     <>
-    <div>
-      <Link to="info" id='historical'></Link>
-      <div className='home-web77-page'>
-        <div className="web77-one-home">
-          <p className="pt-3" data-aos="fade-down" data-aos-duration="2000">{lang.name}</p>
+      <NavbarMenu />
+      <div>
+        <Link to="info" id='historical'></Link>
+        <div className='home-web77-page'>
+          <div className="web77-one-home">
+            <p className="pt-3" data-aos="fade-down" data-aos-duration="2000">{lang.name}</p>
+          </div>
         </div>
-      </div>
-      <Container className='mb-5 pb-5'>
-        <Row>
-          {historical.length && historical.map((item, i) =>
-            <Col key={i} onClick={() => {
-              goHistoricalPage();
-              sessionStorage.setItem("historicalId", item.id);
-            }} className='col-12 col-md-6 col-lg-4 mt-5' data-aos="zoom-in" data-aos-duration="1500">
-              <div className='page7_imges-card'>
-                <div>
-                  <img src={item.image} alt="img" />
+        <Container className='mb-5 pb-5'>
+          <Row>
+            {historical.length && historical.map((item, i) =>
+              <Col key={i} onClick={() => {
+                goHistoricalPage();
+                sessionStorage.setItem("historicalId", item.id);
+              }} className='col-12 col-md-6 col-lg-4 mt-5' data-aos="zoom-in" data-aos-duration="1500">
+                <div className='page7_imges-card'>
+                  <div>
+                    <img src={item.image} alt="img" />
+                  </div>
+                  <h2>{item.title}</h2>
+                  <Icon icon="teenyicons:arrow-left-solid" className="ms-2" width="50" height="50" rotate={2} vFlip={true} />
                 </div>
-                <h2>{item.title}</h2>
-                <Icon icon="teenyicons:arrow-left-solid" className="ms-2" width="50" height="50" rotate={2} vFlip={true} />
-              </div>
-            </Col>
-          )}
-        </Row>
-      </Container>
-    </div>
+              </Col>
+            )}
+          </Row>
+        </Container>
+      </div>
       <FooTer />
 
-              </>
+    </>
   )
 }
 

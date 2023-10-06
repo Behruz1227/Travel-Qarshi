@@ -3,6 +3,7 @@ import "./web18.scss";
 import language from "./long/long.json";
 import { Col, Row } from 'reactstrap';
 import FooTer from "../footer/FooTer";
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Web18() {
 
@@ -16,6 +17,7 @@ function Web18() {
 
   return (
     <>
+      <NavbarMenu />
       <div className="web18-top">
         <div className=' web18-color'>
           <h1>{lang.name}</h1>

@@ -8,6 +8,7 @@ import Aos from "aos";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import FooTer from "../footer/FooTer";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function Page3() {
 
@@ -55,6 +56,7 @@ function Page3() {
     return (
         <div>
             <Link to="info" id="restuarant"></Link>
+            <NavbarMenu />
 
             <div className="page3_box">
                 <h1 data-aos="fade-right" data-aos-duration="2000">{lang.name}</h1>

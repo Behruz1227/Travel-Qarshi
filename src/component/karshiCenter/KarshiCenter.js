@@ -8,6 +8,7 @@ import Aos from "aos";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import FooTer from "../footer/FooTer";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function KarshiCenter() {
 
@@ -17,7 +18,7 @@ function KarshiCenter() {
     useEffect(() => {
         Aos.init();
         getHotels();
-        
+
         if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'UZ');
         let lang = localStorage.getItem('lang');
         setLang(lang === 'UZ' ? language.uz.long : lang === 'EN' ? language.en.long : language.ru.long)
@@ -56,6 +57,7 @@ function KarshiCenter() {
 
     return (
         <div className="karshi_background">
+            <NavbarMenu />
 
             <Link to="info" id="hotelInfo"></Link>
 

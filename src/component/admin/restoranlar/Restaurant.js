@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Col, Container, Input, InputGroup, Label, Modal, ModalBody, ModalFooter, ModalHeader, Row, Table } from "reactstrap";
 import { apiTravel } from "../../api/api";
 import { Link } from "react-router-dom";
+import NavbarAdmin from "../navbar/NavbarAdmin";
 
 function RestuarantAdmin() {
     const [adminHotel, setAdminHotel] = useState([]);
@@ -25,7 +26,7 @@ function RestuarantAdmin() {
     }
     return (
         <Container>
-            {/* <NavbarAdmin /> */}
+            <NavbarAdmin />
 
             <h1
                 style={{ marginTop: "8rem", marginBottom: "4rem" }}

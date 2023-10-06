@@ -8,6 +8,7 @@ import { Icon } from "@iconify/react";
 import FooTer from "../footer/FooTer";
 import { Link } from "react-router-dom";
 import language from "./til.json";
+import NavbarMenu from "../navbar/NavbarMenu";
 
 function Page5() {
 
@@ -57,7 +58,8 @@ function Page5() {
 
     return (
         <>
-        <Link to="info" id="natureInfo"></Link>
+            <NavbarMenu />
+            <Link to="info" id="natureInfo"></Link>
             <div className="container page5_container mt-5 pt-3">
                 <Row className="w-100">
                     <Col className="col-12 col-lg-7 pe-0 pe-lg-4 page5_one">
@@ -65,10 +67,10 @@ function Page5() {
                         <Row>
                             {natures.length && natures.map((item, i) =>
                                 <Col className="col-12 col-md-6 py-3 mb-4" key={i} data-aos="zoom-in-right" data-aos-duration="3000"
-                                onClick={() => {
-                                    goNatureInfoPage();
-                                    sessionStorage.setItem("natureId", item.id);
-                                }}>
+                                    onClick={() => {
+                                        goNatureInfoPage();
+                                        sessionStorage.setItem("natureId", item.id);
+                                    }}>
                                     <div className="page5__one-shadow">
                                         <div className="page5_images">
                                             <img src={item.image} alt="img" />

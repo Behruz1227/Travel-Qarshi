@@ -8,6 +8,7 @@ import language from "./long/longHotel.json";
 import Aos from 'aos';
 import FooTer from "../footer/FooTer";
 import { Icon } from '@iconify/react';
+import NavbarMenu from '../navbar/NavbarMenu';
 
 function Page16() {
 
@@ -54,6 +55,7 @@ function Page16() {
 
     return (
         <div className='home-one-page'>
+            <NavbarMenu />
             <Link to="info" id='enPlases'></Link>
             <Container>
                 <div className='one-home'>
