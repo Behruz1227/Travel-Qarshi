@@ -35,13 +35,13 @@ function NavbarMenu() {
                 <NavbarToggler onClick={toggle} className='bg__collepse' />
                 <Collapse className='nav__collapse' navbar isOpen={isOpen}>
                     <Nav className="me-auto" navbar>
-                        <NavItem><li><Link onClick={toggle} to="/hotel">{lang.nav1}</Link></li></NavItem>
-                        <NavItem><li><Link onClick={toggle} to="/resorts">{lang.nav2}</Link></li></NavItem>
-                        <NavItem><li><Link onClick={toggle} to="/restaurant">{lang.nav3}</Link></li></NavItem>
-                        <NavItem><li><Link onClick={toggle} to="/entertainment/places">{lang.nav4}</Link></li></NavItem>
-                        <NavItem><li><Link onClick={toggle} to="/historical/places">{lang.nav5}</Link></li></NavItem>
-                        <NavItem><li><Link onClick={toggle} to="/nature">{lang.nav6}</Link></li></NavItem>
                         <NavItem><li><Link onClick={toggle} to="/ziyorat">{lang.nav7}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/entertainment/places">{lang.nav4}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/resorts">{lang.nav2}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/historical/places">{lang.nav5}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/restaurant">{lang.nav3}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/hotel">{lang.nav1}</Link></li></NavItem>
+                        <NavItem><li><Link onClick={toggle} to="/nature">{lang.nav6}</Link></li></NavItem>
                     </Nav>
                     <NavbarText className='__language'>
                         <Input className='width__nav' type="select" id="lang" onChange={editLong}>

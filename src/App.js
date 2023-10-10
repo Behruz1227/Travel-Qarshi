@@ -21,10 +21,17 @@ import InfoResorts from "./component/page14/info/InfoResorts";
 import InfoEnPlase from "./component/no/info/InfoEnPlase";
 import InfoTarix from "./component/web7/info/InfoTarix";
 import InfoNature from "./component/page_5/info/InfoNature";
-import HotelAdmin from "./component/admin/mehmonxonalar/HotelAdmin";
-import RestuarantAdmin from "./component/admin/restoranlar/Restaurant";
 import Ziyorat from "./component/ziyorat/Ziyorat";
 import InfoZiyorat from "./component/ziyorat/info/Info";
+
+// admin panel
+import RestuarantAdmin from "./component/admin/restoranlar/Restaurant";
+import HotelAdmin from "./component/admin/mehmonxonalar/HotelAdmin";
+import DamOlishAdmin from "./component/admin/damOlish/DamOlishAdmin";
+import KongilOcharJoylarAdmin from "./component/admin/ko'ngilOcharJoy/KongilOcharJoylarAdmin";
+import TarixiyJoylarAdmin from "./component/admin/tarixiy/TarixiyJoylarAdmin";
+import TabiatAdmin from "./component/admin/tabiat/TabiatAdmin";
+import ZiyoratgohlarAdmin from "./component/admin/ziyoratgohlar/ZiyoratgohlarAdmin";
 
 // import Page2 from "./component/page_2/Page2";
 // import Page4 from "./component/page_4/Page4";
@@ -37,8 +44,13 @@ function App() {
             <Routes>
 
                 {/* admin panel */}
-                <Route path="admin/hotel" element={<HotelAdmin />} />
-                <Route path="admin/restoran" element={<RestuarantAdmin />} />
+                <Route path="admin hotel" element={<HotelAdmin />} />
+                <Route path="admin restoran" element={<RestuarantAdmin />} />
+                <Route path="admin resorts" element={<DamOlishAdmin />} />
+                <Route path="admin entertainment/places" element={<KongilOcharJoylarAdmin />} />
+                <Route path="admin historical/places" element={<TarixiyJoylarAdmin />} />
+                <Route path="admin nature" element={<TabiatAdmin />} />
+                <Route path="admin ziyorat" element={<ZiyoratgohlarAdmin />} />
 
                 {/* ishlatilmayotgan pages */}
                 {/* <Route path="/page2" element={<Page2 />} /> */}

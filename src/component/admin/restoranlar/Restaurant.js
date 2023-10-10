@@ -92,7 +92,7 @@ function RestuarantAdmin() {
                             <Input className="mt-2" placeholder="title_uz" />
                         </Col>
                         <Col className="col-12 col-md-8">
-                            
+
                             <Label className="mt-2 d-block" for="image">Majburiy</Label>
                             <textarea className="mt-2" name="" id="" cols="60" placeholder="description_en" ></textarea>
                             <textarea className="mt-2" name="" id="" cols="60" placeholder="description_ru" ></textarea>
@@ -134,7 +134,7 @@ function RestuarantAdmin() {
                             <Input className="mt-2" placeholder="Title uzb" />
                         </Col>
                         <Col className="col-12 col-md-8">
-                           
+
                             <Label className="mt-2 d-block" for="image">Majburiy</Label>
                             <textarea className="mt-2" name="" id="" cols="60" placeholder="description_en" ></textarea>
                             <textarea className="mt-2" name="" id="" cols="60" placeholder="description_ru" ></textarea>

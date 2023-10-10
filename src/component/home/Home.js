@@ -13,19 +13,19 @@ import axios from 'axios';
 import { apiTravel } from "../api/api";
 import language from "./homeJson/home.json";
 import NavbarMenu from "../navbar/NavbarMenu";
+import Loading from '../loading/Loading';
 
 function Home() {
 
     const [placeCategory, setPlaceCategory] = useState([]);
     const [placeCategoryOne, setPlaceCategoryOne] = useState([]);
     const [lang, setLang] = useState('');
-    const [batafsil, setBatafsil] = useState(false);
-
-    const openBtn = () => setBatafsil(!batafsil);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         Aos.init();
         getPlaceCategory();
+        setLoading(true);
         axios.get(apiTravel + "place-categories/9/").then(res => setPlaceCategoryOne(res.data));
 
         if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'UZ');
@@ -71,22 +71,23 @@ function Home() {
     const page20 = () => document.getElementById("page20").click();
     const page21 = () => document.getElementById("page21").click();
 
-    // plase category link
+    const initialPlaceCategory = placeCategory;
+
     const goPage = (i) => {
         if (i === 0) {
-            document.getElementById("page8").click();
+            document.getElementById("Ziyorat").click();
         } else if (i === 1) {
-            document.getElementById("page13").click();
+            document.getElementById("page16").click();
         } else if (i === 2) {
-            document.getElementById("page3").click();
+            document.getElementById("page14").click();
         } else if (i === 3) {
             document.getElementById("page7").click();
         } else if (i === 4) {
-            document.getElementById("page14").click();
+            document.getElementById("page3").click();
         } else if (i === 5) {
-            document.getElementById("page16").click();
+            document.getElementById("page13").click();
         } else if (i === 6) {
-            document.getElementById("Ziyorat").click();
+            document.getElementById("page8").click();
         }
     }
 
@@ -116,54 +117,40 @@ function Home() {
             <Link to="/ziyorat" id='Ziyorat'></Link>
 
             <div className='home_qash'>
-                <div className='home_black-bg'>
-                    <div>
-                        <Container className='home-svg'>
-                            <h4 className='me-3 pt-5' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash1}</h4>
-                            <h4 className='me-5 ' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash2}</h4>
-                            {/* <p data-aos="fade-right" data-aos-duration="2000"></p> */}
-                            <Row className='text-start category-row' data-aos="zoom-in" data-aos-duration="2000">
-                                {placeCategory && placeCategory.map((item, i) =>
-                                    // item.id !== 9 ?
-                                    <Col className='d-none d-md-inline d-lg-flex home_radial-img' key={i}>
-                                        <div onClick={() => goPage(i)}>
-                                            <img className='img-fluid' src={item.image} alt="img1" />
+                {/* {loading ? */}
+                    <div className='home_black-bg'>
+                        <div>
+                            <Container className='home-svg'>
+                                <h4 className='me-3 pt-5' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash1}</h4>
+                                <h4 className='me-5 ' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash2}</h4>
+                                <Row className='text-start category-row' data-aos="zoom-in" data-aos-duration="2000">
+                                    {initialPlaceCategory.length && initialPlaceCategory.slice().reverse().map((item, i) =>
+                                        <Col className='d-none d-md-inline d-lg-flex home_radial-img' key={i}>
+                                            <div onClick={() => goPage(i)}>
+                                                <img className='img-fluid' src={item.image} alt="img1" />
+                                            </div>
+                                            <p>{item.title}</p>
+                                        </Col>
+                                    )}
+                                    <Col className='d-md-none col-6 col-sm-3 col-lg-2 home_radial-img'>
+                                        <div onClick={() => goPage(6)}>
+                                            <img className='img-fluid' src={placeCategoryOne.image} alt="img1" />
                                         </div>
-                                        <p>{item.title}</p>
+                                        <p>{placeCategoryOne.title}</p>
                                     </Col>
-                                    // : ""
-                                )}
-                                <Col className='d-md-none col-6 col-sm-3 col-lg-2 home_radial-img'>
-                                    <div onClick={() => goPage(6)}>
-                                        <img className='img-fluid' src={placeCategoryOne.image} alt="img1" />
-                                    </div>
-                                    <p>{placeCategoryOne.title}</p>
-                                </Col>
-                            </Row>
-                        </Container>
+                                </Row>
+                            </Container>
+                        </div>
                     </div>
-                </div>
+                {/* } */}
+                {/* {loading ? <Loading /> : ""} */}
             </div>
             <div className='kul'>
                 <p>{lang.welcome}</p>
             </div>
             <div className="cardsColor pb-5">
                 <Container >
-                    <Row className='pt-5'>
-                        {/* <img className='mt-5 mb-5'  src={cityImg} alt="" /> */}
-                        {/* <Col className='d-none d-lg-inline col-lg-5 col-sm-1' data-aos="fade-left" data-aos-duration="2000">
-                            <div className='text-start'>
-                                <img className='kash_img-two' src={gul2} alt="image2" />
-                            </div>
-                            <div className='text-end'>
-                                <img className='kash_img-one imgGul' src={gul1} alt="image1" />
-                            </div>
-                            <div className='text-start'>
-                                <img className='kash_img-tree' src={gul3} alt="image3" />
-                            </div>
-                        </Col> */}
-                    </Row>
-
+                    <Row className='pt-5'></Row>
                     <h3 className='home_travel'>{lang.homePlace}</h3>
                     <Row>
                         <Col className="col-12 col-md-6 col-lg-4 mb-5" data-aos="zoom-in" data-aos-duration="1500">

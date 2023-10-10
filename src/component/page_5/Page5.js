@@ -52,8 +52,6 @@ function Page5() {
         setNatures(list)
     }
 
-    console.log(natures);
-
     const goNatureInfoPage = () => document.getElementById("natureInfo").click();
 
     return (
