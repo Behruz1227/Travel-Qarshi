@@ -9,13 +9,14 @@ import { toast } from "react-toastify";
 function ZiyoratgohlarAdmin() {
 
     const [adminZiyorat, setAdminZiyorat] = useState([]);
+    const [adminZiyoratId, setAdminZiyoratId] = useState([]);
     const [addModal, setAddModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
     const [deleteModal, setDeleteModal] = useState(false);
 
     const openAddModal = () => setAddModal(!addModal);
-    // const openEditModal = () => setEditModal(!editModal);
-    // const openDeleteModal = () => setDeleteModal(!deleteModal);
+    const openEditModal = () => setEditModal(!editModal);
+    const openDeleteModal = () => setDeleteModal(!deleteModal);
 
     useEffect(() => {
         getZiyoratAdmin();
@@ -74,6 +75,39 @@ function ZiyoratgohlarAdmin() {
         })
     }
 
+    // edit ziyorat
+    const editZiyorat = () => {
+        axios.put(apiTravel + "places/" + adminZiyoratId.id + "/", getZiyoratgohObj(), {
+            headers: {
+                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+            }
+        }).then(() => {
+            openEditModal();
+            getZiyoratAdmin();
+            toast.success("Mehmonxona muvaffaqiyatli taxrirlandi✔");
+        }).catch(() => {
+            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            openEditModal();
+            // console.log(err);
+        })
+    }
+
+    // detele hotel
+    const deleteZiyorat = () => {
+        axios.delete(apiTravel + "places/" + adminZiyoratId.id + "/", {
+            headers: {
+                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+            }
+        }).then(() => {
+            openDeleteModal();
+            getZiyoratAdmin();
+            toast.success("Mehmonxona o'chirildi")
+        }).catch(() => {
+            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            openDeleteModal();
+        })
+    }
+
     return (
         <Container>
             <NavbarAdmin />
@@ -113,12 +147,12 @@ function ZiyoratgohlarAdmin() {
                             {/* <td>{item.description}</td> */}
                             <td><Link to={item.booking_link}>{item.title}</Link></td>
                             <td><Button onClick={() => {
-                                // openEditModal();
-                                // setHotelItemId(item);
+                                openEditModal();
+                                setAdminZiyoratId(item);
                             }} color="warning" outline>Edit</Button></td>
                             <td><Button onClick={() => {
-                                // openDeleteModal();
-                                // setHotelItemId(item);
+                                openDeleteModal();
+                                setAdminZiyoratId(item);
                             }} color="danger" outline>Delete</Button></td>
                         </tr>
                     )}
@@ -174,6 +208,111 @@ function ZiyoratgohlarAdmin() {
                 <ModalFooter>
                     <Button onClick={openAddModal}>Orqaga</Button>
                     <Button color="success" onClick={addZiyoratgoh}>Saqlash</Button>
+                </ModalFooter>
+            </Modal>
+
+            {/* editModal */}
+            <Modal scrollable size="xl" isOpen={editModal}>
+                <ModalHeader toggle={openEditModal}><span className="fw-bold fs-2 text-dark">Taxrirlash</span></ModalHeader>
+                <ModalBody className="modal__label">
+                    <Row>
+                        <Col className="col-12 col-md-4">
+                            <Label for="image">Image: Majburiy</Label>
+                            <Input type="file" id="image" placeholder="image_1" />
+                            <Label for="image2">Image 2: Ixtiyoriy</Label>
+                            <Input type="file" id="image2" placeholder="image_2" />
+                            <Label for="image3">Image 3: Ixtiyoriy</Label>
+                            <Input type="file" id="image3" placeholder="image_3" />
+                            <Label for="image4">Image 4: Ixtiyoriy</Label>
+                            <Input type="file" id="image4" placeholder="image_4" />
+                            <Label for="image5">Image 5: Ixtiyoriy</Label>
+                            <Input type="file" id="image5" placeholder="image_5" />
+                            <Label for="image6">Image 6: Ixtiyoriy</Label>
+                            <Input type="file" id="image6" placeholder="image_6" />
+                            <Label for="image7">Image 7: Ixtiyoriy</Label>
+                            <Input type="file" id="image7" placeholder="image_7" />
+                            <Label for="image8">Image 8: Ixtiyoriy</Label>
+                            <Input type="file" id="image8" placeholder="image_8" />
+                            <Label>Title: Majburiy</Label>
+                            <Input id="title_en" placeholder="title_en" defaultValue={adminZiyoratId && adminZiyoratId.title_en} />
+                            <Input id="title_uz" placeholder="title_uz" defaultValue={adminZiyoratId && adminZiyoratId.title_uz} />
+                            <Input id="title_ru" placeholder="title_ru" defaultValue={adminZiyoratId && adminZiyoratId.title_ru} />
+                            <Input id="rank" type="number" placeholder="rank" defaultValue={adminZiyoratId && adminZiyoratId.rank} />
+                        </Col>
+                        <Col className="col-12 col-md-8 input__title">
+                            <Label for="description">Description: Majburiy</Label>
+                            <textarea
+                                id="description_en"
+                                placeholder="description_en"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description_en}></textarea>
+                            <textarea
+                                id="description_uz"
+                                placeholder="description_uz"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description_uz}></textarea>
+                            <textarea
+                                id="description_ru"
+                                placeholder="description_ru"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description_ru}></textarea>
+                            <Label for="description2">Description_2: Ixtiyoriy</Label>
+                            <textarea
+                                id="description2_en"
+                                placeholder="description_2_en"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description2_en}></textarea>
+                            <textarea
+                                id="description2_uz"
+                                placeholder="description_2_uz"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description2_uz}></textarea>
+                            <textarea
+                                id="description2_ru"
+                                placeholder="description_2_ru"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description2_ru}></textarea>
+                            <Label for="description3">Description_3: Ixtiyoriy</Label>
+                            <textarea
+                                id="description3_en"
+                                placeholder="description_3_en"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description3_en}></textarea>
+                            <textarea
+                                id="description3_uz"
+                                placeholder="description_3_uz"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description3_uz}></textarea>
+                            <textarea
+                                id="description3_ru"
+                                placeholder="description_3_ru"
+                                rows="2"
+                                defaultValue={adminZiyoratId && adminZiyoratId.description3_ru}></textarea>
+                            <Label for="booking_link">Booking link: Ixtiyoriy</Label>
+                            <textarea
+                                id="booking_link"
+                                placeholder="booking_link"
+                                rows="3"
+                                defaultValue={adminZiyoratId && adminZiyoratId.booking_link}></textarea>
+                        </Col>
+                    </Row>
+                </ModalBody>
+                <ModalFooter>
+                    <Button onClick={openEditModal}>Orqaga</Button>
+                    <Button color="success" onClick={editZiyorat}>Saqlash</Button>
+                </ModalFooter>
+            </Modal>
+
+            {/* delete modal */}
+            <Modal isOpen={deleteModal}>
+                <ModalHeader toggle={openDeleteModal}>Ziyoratgohni o'chirish</ModalHeader>
+                <ModalBody>
+                    Siz bu ziyoratgohni o'chirmoqchisiz. <br />
+                    Bu ziyoratgohni o'chirishga ishonchingiz komilmi?
+                </ModalBody>
+                <ModalFooter>
+                    <Button onClick={openDeleteModal}>Orqaga</Button>
+                    <Button onClick={deleteZiyorat} color="danger">O'chirish</Button>
                 </ModalFooter>
             </Modal>
         </Container>
