@@ -108,6 +108,13 @@ function ZiyoratgohlarAdmin() {
         })
     }
 
+    // search
+    function searchVal() {
+        let searchVal = document.getElementById('search').value
+        if (!!searchVal) axios.get(apiTravel + 'places/?category=9&search=' + searchVal).then(res => setAdminZiyorat(res.data.results))
+        else getZiyoratAdmin();
+    }
+
     return (
         <Container>
             <NavbarAdmin />
@@ -121,8 +128,8 @@ function ZiyoratgohlarAdmin() {
                 <Button onClick={openAddModal} color="primary" className="px-5 py-2 fs-5 fw-medium">Ziyoratgohlar qo'shish</Button>
                 <div>
                     <InputGroup>
-                        <Input className="w-25" size="lg" placeholder="🔍search" />
-                        <Button color="success">🔍</Button>
+                        <Input className="w-25" onChange={searchVal} id="search" size="lg" placeholder="🔍search" />
+                        {/* <Button color="success">🔍</Button> */}
                     </InputGroup>
                 </div>
             </div>

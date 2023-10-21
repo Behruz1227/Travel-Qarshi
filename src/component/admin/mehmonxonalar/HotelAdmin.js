@@ -106,7 +106,14 @@ function HotelAdmin() {
         }).catch(() => {
             toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
             openDeleteModal();
-        })
+        });
+    }
+
+    // search
+    function searchVal() {
+        let searchVal = document.getElementById('search').value
+        if (!!searchVal) axios.get(apiTravel + 'places/?category=4&search=' + searchVal).then(res => setAdminHotel(res.data.results))
+        else getHotelsAdmin();
     }
 
     return (
@@ -122,8 +129,8 @@ function HotelAdmin() {
                 <Button onClick={openAddModal} color="primary" className="px-5 py-2 fs-5 fw-medium">Mehmonxona qo'shish</Button>
                 <div>
                     <InputGroup>
-                        <Input className="w-25" size="lg" placeholder="🔍search" />
-                        <Button color="success">🔍</Button>
+                        <Input className="w-25" onChange={searchVal} id="search" size="lg" placeholder="🔍search" />
+                        {/* <Button color="success">🔍</Button> */}
                     </InputGroup>
                 </div>
             </div>

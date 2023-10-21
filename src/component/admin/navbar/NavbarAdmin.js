@@ -10,7 +10,7 @@ function NavbarAdmin() {
 
     return (
         <div>
-            <Navbar expand="lg" fixed='top' className='navbar-menu__brend'>
+            <Navbar expand="lg" fixed='top' className='navbar-menu__brend menu__brand-two'>
                 <NavbarToggler onClick={toggle} className='bg__collepse' />
                 <Collapse className='nav__collapse' navbar isOpen={isOpen}>
                     <Nav className="me-auto" navbar>
