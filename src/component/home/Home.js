@@ -13,20 +13,19 @@ import axios from 'axios';
 import { apiTravel } from "../api/api";
 import language from "./homeJson/home.json";
 import NavbarMenu from "../navbar/NavbarMenu";
-import Loading from '../loading/Loading';
+// import Loading from '../loading/Loading';
 
 function Home() {
 
     const [placeCategory, setPlaceCategory] = useState([]);
-    const [placeCategoryOne, setPlaceCategoryOne] = useState([]);
     const [lang, setLang] = useState('');
-    const [loading, setLoading] = useState(false);
+    // const [placeCategoryOne, setPlaceCategoryOne] = useState([]);
+    // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         Aos.init();
         getPlaceCategory();
-        setLoading(true);
-        axios.get(apiTravel + "place-categories/9/").then(res => setPlaceCategoryOne(res.data));
+        // axios.get(apiTravel + "place-categories/9/").then(res => setPlaceCategoryOne(res.data));
 
         if (!localStorage.getItem('lang')) localStorage.setItem('lang', 'UZ');
         let lang = localStorage.getItem('lang');
@@ -117,33 +116,34 @@ function Home() {
             <Link to="/ziyorat" id='Ziyorat'></Link>
 
             <div className='home_qash'>
-                {/* {loading ? */}
-                    <div className='home_black-bg'>
-                        <div>
-                            <Container className='home-svg'>
-                                <h4 className='me-3 pt-5' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash1}</h4>
-                                <h4 className='me-5 ' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash2}</h4>
-                                <Row className='text-start category-row' data-aos="zoom-in" data-aos-duration="2000">
-                                    {initialPlaceCategory.length && initialPlaceCategory.slice().reverse().map((item, i) =>
-                                        <Col className='d-none d-md-inline d-lg-flex home_radial-img' key={i}>
-                                            <div onClick={() => goPage(i)}>
+                <div className='home_black-bg'>
+                    <div>
+                        <Container className='home-svg'>
+                            <h4 className='me-3 pt-5' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash1}</h4>
+                            <h4 className='me-5 ' data-aos="fade-left" data-aos-duration="2000" x="50%" y="50%" dy=".35em" text-anchor="middle">{lang.travelQash2}</h4>
+                            <Row className='text-start category-row' data-aos="zoom-in" data-aos-duration="2000">
+                                {initialPlaceCategory.length && initialPlaceCategory.slice().reverse().map((item, i) =>
+                                    <Col className='d-none d-md-inline d-lg-flex home_radial-img' key={i}>
+                                        <div onClick={() => goPage(i)}>
+                                            <img className='img-fluid' src={item.image} alt="img1" />
+                                        </div>
+                                        <p>{item.title}</p>
+                                    </Col>
+                                )}
+                                {placeCategory.length && placeCategory.map((item, i) =>
+                                    item.id === 9 ?
+                                        <Col key={i} className='d-md-none col-6 col-sm-3 col-lg-2 home_radial-img'>
+                                            <div onClick={() => goPage(0)}>
                                                 <img className='img-fluid' src={item.image} alt="img1" />
                                             </div>
                                             <p>{item.title}</p>
                                         </Col>
-                                    )}
-                                    <Col className='d-md-none col-6 col-sm-3 col-lg-2 home_radial-img'>
-                                        <div onClick={() => goPage(6)}>
-                                            <img className='img-fluid' src={placeCategoryOne.image} alt="img1" />
-                                        </div>
-                                        <p>{placeCategoryOne.title}</p>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </div>
+                                        : ""
+                                )}
+                            </Row>
+                        </Container>
                     </div>
-                {/* } */}
-                {/* {loading ? <Loading /> : ""} */}
+                </div>
             </div>
             <div className='kul'>
                 <p>{lang.welcome}</p>
