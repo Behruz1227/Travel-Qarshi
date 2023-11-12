@@ -1,8 +1,21 @@
-import { Button, Col, Container, Input, InputGroup, Label, Modal, ModalBody, ModalFooter, ModalHeader, Row, Table } from "reactstrap";
+import {
+    Button,
+    Col,
+    Container,
+    Input,
+    InputGroup,
+    Label,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
+    Row,
+    Table
+} from "reactstrap";
 import NavbarAdmin from "../navbar/NavbarAdmin";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { apiTravel } from "../../api/api";
+import { apiTravel, byId, byIdImg } from "../../api/api";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -27,83 +40,132 @@ function ZiyoratgohlarAdmin() {
         axios.get(apiTravel + "places/?category=9").then(res => setAdminZiyorat(res.data.results));
     }
 
-    function getZiyoratgohObj() {
-        const ziyoratgohObj = new FormData();
-        ziyoratgohObj.append("image", document.getElementById('image').files[0]);
-        ziyoratgohObj.append("image2", document.getElementById('image2').files[0]);
-        ziyoratgohObj.append("image3", document.getElementById('image3').files[0]);
-        ziyoratgohObj.append("image4", document.getElementById('image4').files[0]);
-        ziyoratgohObj.append("image5", document.getElementById('image5').files[0]);
-        ziyoratgohObj.append("image6", document.getElementById('image6').files[0]);
-        ziyoratgohObj.append("image7", document.getElementById('image7').files[0]);
-        ziyoratgohObj.append("image8", document.getElementById('image8').files[0]);
-        ziyoratgohObj.append("title", document.getElementById('title_uz').value);
-        ziyoratgohObj.append("title_en", document.getElementById('title_en').value);
-        ziyoratgohObj.append("title_uz", document.getElementById('title_uz').value);
-        ziyoratgohObj.append("title_ru", document.getElementById('title_ru').value);
-        ziyoratgohObj.append("description", document.getElementById('description_uz').value);
-        ziyoratgohObj.append("description_en", document.getElementById('description_en').value);
-        ziyoratgohObj.append("description_uz", document.getElementById('description_uz').value);
-        ziyoratgohObj.append("description_ru", document.getElementById('description_ru').value);
-        ziyoratgohObj.append("description2", document.getElementById('description2_uz').value);
-        ziyoratgohObj.append("description2_en", document.getElementById('description2_en').value);
-        ziyoratgohObj.append("description2_uz", document.getElementById('description2_uz').value);
-        ziyoratgohObj.append("description2_ru", document.getElementById('description2_ru').value);
-        ziyoratgohObj.append("description3", document.getElementById('description3_uz').value);
-        ziyoratgohObj.append("description3_en", document.getElementById('description3_en').value);
-        ziyoratgohObj.append("description3_uz", document.getElementById('description3_uz').value);
-        ziyoratgohObj.append("description3_ru", document.getElementById('description3_ru').value);
-        ziyoratgohObj.append("rank", document.getElementById('rank').value);
-        ziyoratgohObj.append("booking_link", document.getElementById('booking_link').value);
-        return ziyoratgohObj;
-    }
-
     // add ziyoratgoh
     const addZiyoratgoh = () => {
-        axios.post(apiTravel + "places/?category=9/", getZiyoratgohObj(), {
+        const ziyoratgohObj = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        ziyoratgohObj.append("image", byIdImg('image'));
+        if (image2 != null) ziyoratgohObj.append("image2", byIdImg('image2'));
+        if (image3 != null) ziyoratgohObj.append("image3", byIdImg('image3'));
+        if (image4 != null) ziyoratgohObj.append("image4", byIdImg('image4'));
+        if (image5 != null) ziyoratgohObj.append("image5", byIdImg('image5'));
+        if (image6 != null) ziyoratgohObj.append("image6", byIdImg('image6'));
+        if (image7 != null) ziyoratgohObj.append("image7", byIdImg('image7'));
+        if (image8 != null) ziyoratgohObj.append("image8", byIdImg('image8'));
+        ziyoratgohObj.append("title", byId('title_uz'));
+        ziyoratgohObj.append("title_en", byId('title_en'));
+        ziyoratgohObj.append("title_uz", byId('title_uz'));
+        ziyoratgohObj.append("title_ru", byId('title_ru'));
+        ziyoratgohObj.append("description", byId('description_uz'));
+        ziyoratgohObj.append("description_en", byId('description_en'));
+        ziyoratgohObj.append("description_uz", byId('description_uz'));
+        ziyoratgohObj.append("description_ru", byId('description_ru'));
+        ziyoratgohObj.append("description2", byId('description2_uz'));
+        ziyoratgohObj.append("description2_en", byId('description2_en'));
+        ziyoratgohObj.append("description2_uz", byId('description2_uz'));
+        ziyoratgohObj.append("description2_ru", byId('description2_ru'));
+        ziyoratgohObj.append("description3", byId('description3_uz'));
+        ziyoratgohObj.append("description3_en", byId('description3_en'));
+        ziyoratgohObj.append("description3_uz", byId('description3_uz'));
+        ziyoratgohObj.append("description3_ru", byId('description3_ru'));
+        ziyoratgohObj.append("rank", byId('rank'));
+        ziyoratgohObj.append("booking_link", byId('booking_link'));
+        ziyoratgohObj.append('category', 9);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.post(apiTravel + "places/", ziyoratgohObj, config).then(() => {
             openAddModal();
             getZiyoratAdmin();
-            toast.success("Mehmonxona muvaffaqiyatli qo'shildi✔");
+            toast.success("Ziyoratgoh muvaffaqiyatli qo'shildi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openAddModal();
-            // console.log(err);
         })
     }
 
     // edit ziyorat
     const editZiyorat = () => {
-        axios.put(apiTravel + "places/" + adminZiyoratId.id + "/", getZiyoratgohObj(), {
+
+        const ziyoratgohObj = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        ziyoratgohObj.append("image", byIdImg('image'));
+        if (image2 != null) ziyoratgohObj.append("image2", byIdImg('image2'));
+        if (image3 != null) ziyoratgohObj.append("image3", byIdImg('image3'));
+        if (image4 != null) ziyoratgohObj.append("image4", byIdImg('image4'));
+        if (image5 != null) ziyoratgohObj.append("image5", byIdImg('image5'));
+        if (image6 != null) ziyoratgohObj.append("image6", byIdImg('image6'));
+        if (image7 != null) ziyoratgohObj.append("image7", byIdImg('image7'));
+        if (image8 != null) ziyoratgohObj.append("image8", byIdImg('image8'));
+        ziyoratgohObj.append("title", byId('title_uz'));
+        ziyoratgohObj.append("title_en", byId('title_en'));
+        ziyoratgohObj.append("title_uz", byId('title_uz'));
+        ziyoratgohObj.append("title_ru", byId('title_ru'));
+        ziyoratgohObj.append("description", byId('description_uz'));
+        ziyoratgohObj.append("description_en", byId('description_en'));
+        ziyoratgohObj.append("description_uz", byId('description_uz'));
+        ziyoratgohObj.append("description_ru", byId('description_ru'));
+        ziyoratgohObj.append("description2", byId('description2_uz'));
+        ziyoratgohObj.append("description2_en", byId('description2_en'));
+        ziyoratgohObj.append("description2_uz", byId('description2_uz'));
+        ziyoratgohObj.append("description2_ru", byId('description2_ru'));
+        ziyoratgohObj.append("description3", byId('description3_uz'));
+        ziyoratgohObj.append("description3_en", byId('description3_en'));
+        ziyoratgohObj.append("description3_uz", byId('description3_uz'));
+        ziyoratgohObj.append("description3_ru", byId('description3_ru'));
+        ziyoratgohObj.append("rank", byId('rank'));
+        ziyoratgohObj.append("booking_link", byId('booking_link'));
+        ziyoratgohObj.append('category', 9);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.put(apiTravel + "places/" + adminZiyoratId.id  + "/", ziyoratgohObj, config).then(() => {
             openEditModal();
             getZiyoratAdmin();
-            toast.success("Mehmonxona muvaffaqiyatli taxrirlandi✔");
+            toast.success("Ziyoratgoh muvaffaqiyatli taxrirlandi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openEditModal();
-            // console.log(err);
         })
     }
 
-    // detele hotel
+    // detele
     const deleteZiyorat = () => {
-        axios.delete(apiTravel + "places/" + adminZiyoratId.id + "/", {
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.delete(apiTravel + "places/" + adminZiyoratId.id + "/", config).then(() => {
             openDeleteModal();
             getZiyoratAdmin();
-            toast.success("Mehmonxona o'chirildi")
+            toast.success("Ziyoratgoh o'chirildi")
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi!");
             openDeleteModal();
         })
     }
@@ -125,7 +187,8 @@ function ZiyoratgohlarAdmin() {
 
             <div className="mb-5"
                 style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
-                <Button onClick={openAddModal} color="primary" className="px-5 py-2 fs-5 fw-medium">Ziyoratgohlar qo'shish</Button>
+                <Button onClick={openAddModal} color="primary" className="px-5 py-2 fs-5 fw-medium">Ziyoratgohlar
+                    qo'shish</Button>
                 <div>
                     <InputGroup>
                         <Input className="w-25" onChange={searchVal} id="search" size="lg" placeholder="🔍search" />
@@ -168,7 +231,8 @@ function ZiyoratgohlarAdmin() {
 
             {/* addmodal */}
             <Modal scrollable size="xl" isOpen={addModal}>
-                <ModalHeader toggle={openAddModal}><span className="fw-bold fs-2 text-dark">Ziyoratgohlar qo'shish</span></ModalHeader>
+                <ModalHeader toggle={openAddModal}><span
+                    className="fw-bold fs-2 text-dark">Ziyoratgohlar qo'shish</span></ModalHeader>
                 <ModalBody className="modal__label">
                     <Row>
                         <Col className="col-12 col-md-4">
@@ -220,7 +284,8 @@ function ZiyoratgohlarAdmin() {
 
             {/* editModal */}
             <Modal scrollable size="xl" isOpen={editModal}>
-                <ModalHeader toggle={openEditModal}><span className="fw-bold fs-2 text-dark">Taxrirlash</span></ModalHeader>
+                <ModalHeader toggle={openEditModal}><span
+                    className="fw-bold fs-2 text-dark">Taxrirlash</span></ModalHeader>
                 <ModalBody className="modal__label">
                     <Row>
                         <Col className="col-12 col-md-4">
@@ -241,10 +306,14 @@ function ZiyoratgohlarAdmin() {
                             <Label for="image8">Image 8: Ixtiyoriy</Label>
                             <Input type="file" id="image8" placeholder="image_8" />
                             <Label>Title: Majburiy</Label>
-                            <Input id="title_en" placeholder="title_en" defaultValue={adminZiyoratId && adminZiyoratId.title_en} />
-                            <Input id="title_uz" placeholder="title_uz" defaultValue={adminZiyoratId && adminZiyoratId.title_uz} />
-                            <Input id="title_ru" placeholder="title_ru" defaultValue={adminZiyoratId && adminZiyoratId.title_ru} />
-                            <Input id="rank" type="number" placeholder="rank" defaultValue={adminZiyoratId && adminZiyoratId.rank} />
+                            <Input id="title_en" placeholder="title_en"
+                                defaultValue={adminZiyoratId && adminZiyoratId.title_en} />
+                            <Input id="title_uz" placeholder="title_uz"
+                                defaultValue={adminZiyoratId && adminZiyoratId.title_uz} />
+                            <Input id="title_ru" placeholder="title_ru"
+                                defaultValue={adminZiyoratId && adminZiyoratId.title_ru} />
+                            <Input id="rank" type="number" placeholder="rank"
+                                defaultValue={adminZiyoratId && adminZiyoratId.rank} />
                         </Col>
                         <Col className="col-12 col-md-8 input__title">
                             <Label for="description">Description: Majburiy</Label>

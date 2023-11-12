@@ -32,6 +32,7 @@ import KongilOcharJoylarAdmin from "./component/admin/ko'ngilOcharJoy/KongilOcha
 import TarixiyJoylarAdmin from "./component/admin/tarixiy/TarixiyJoylarAdmin";
 import TabiatAdmin from "./component/admin/tabiat/TabiatAdmin";
 import ZiyoratgohlarAdmin from "./component/admin/ziyoratgohlar/ZiyoratgohlarAdmin";
+import LogInHokimyat from "./component/admin/loginPage/LogInHokimyat";
 
 // import Page2 from "./component/page_2/Page2";
 // import Page4 from "./component/page_4/Page4";
@@ -51,6 +52,9 @@ function App() {
                 <Route path="admin historical/places" element={<TarixiyJoylarAdmin />} />
                 <Route path="admin nature" element={<TabiatAdmin />} />
                 <Route path="admin ziyorat" element={<ZiyoratgohlarAdmin />} />
+
+                {/* login page */}
+                <Route path="login" element={<LogInHokimyat />} />
 
                 {/* ishlatilmayotgan pages */}
                 {/* <Route path="/page2" element={<Page2 />} /> */}

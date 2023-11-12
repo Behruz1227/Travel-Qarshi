@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Input, InputGroup, Label, Modal, ModalBody, ModalFooter, ModalHeader, Row, Table } from "reactstrap";
-import { apiTravel } from "../../api/api";
+import { apiTravel, byId, byIdImg } from "../../api/api";
 import { Link } from "react-router-dom";
 import NavbarAdmin from "../navbar/NavbarAdmin";
 import { toast } from "react-toastify";
@@ -12,7 +12,6 @@ function RestuarantAdmin() {
     const [addModal, setAddModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
     const [deleteModal, setDeleteModal] = useState(false);
-    // const [search, setSearch] = useState("");
 
     useEffect(() => {
         getHotelsAdmin();
@@ -28,83 +27,131 @@ function RestuarantAdmin() {
         axios.get(apiTravel + "places/?category=5").then(res => setAdminHotel(res.data.results));
     }
 
-    function getRestuarantObj() {
-        const restuarantObj = new FormData();
-        restuarantObj.append("image", document.getElementById('image').files[0]);
-        restuarantObj.append("image2", document.getElementById('image2').files[0]);
-        restuarantObj.append("image3", document.getElementById('image3').files[0]);
-        restuarantObj.append("image4", document.getElementById('image4').files[0]);
-        restuarantObj.append("image5", document.getElementById('image5').files[0]);
-        restuarantObj.append("image6", document.getElementById('image6').files[0]);
-        restuarantObj.append("image7", document.getElementById('image7').files[0]);
-        restuarantObj.append("image8", document.getElementById('image8').files[0]);
-        restuarantObj.append("title", document.getElementById('title_uz').value);
-        restuarantObj.append("title_en", document.getElementById('title_en').value);
-        restuarantObj.append("title_uz", document.getElementById('title_uz').value);
-        restuarantObj.append("title_ru", document.getElementById('title_ru').value);
-        restuarantObj.append("description", document.getElementById('description_uz').value);
-        restuarantObj.append("description_en", document.getElementById('description_en').value);
-        restuarantObj.append("description_uz", document.getElementById('description_uz').value);
-        restuarantObj.append("description_ru", document.getElementById('description_ru').value);
-        restuarantObj.append("description2", document.getElementById('description2_uz').value);
-        restuarantObj.append("description2_en", document.getElementById('description2_en').value);
-        restuarantObj.append("description2_uz", document.getElementById('description2_uz').value);
-        restuarantObj.append("description2_ru", document.getElementById('description2_ru').value);
-        restuarantObj.append("description3", document.getElementById('description3_uz').value);
-        restuarantObj.append("description3_en", document.getElementById('description3_en').value);
-        restuarantObj.append("description3_uz", document.getElementById('description3_uz').value);
-        restuarantObj.append("description3_ru", document.getElementById('description3_ru').value);
-        restuarantObj.append("rank", document.getElementById('rank').value);
-        restuarantObj.append("booking_link", document.getElementById('booking_link').value);
-        return restuarantObj;
-    }
-
     // add
     const addRestoran = () => {
-        axios.post(apiTravel + "places/?category=5/", getRestuarantObj(), {
+        const restoranPlaces = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        restoranPlaces.append("image", byIdImg('image'));
+        if (image2 != null) restoranPlaces.append("image2", byIdImg('image2'));
+        if (image3 != null) restoranPlaces.append("image3", byIdImg('image3'));
+        if (image4 != null) restoranPlaces.append("image4", byIdImg('image4'));
+        if (image5 != null) restoranPlaces.append("image5", byIdImg('image5'));
+        if (image6 != null) restoranPlaces.append("image6", byIdImg('image6'));
+        if (image7 != null) restoranPlaces.append("image7", byIdImg('image7'));
+        if (image8 != null) restoranPlaces.append("image8", byIdImg('image8'));
+        restoranPlaces.append('title', byId('title_uz'));
+        restoranPlaces.append('title_uz', byId('title_uz'));
+        restoranPlaces.append('title_en', byId('title_en'));
+        restoranPlaces.append('title_ru', byId('title_ru'));
+        restoranPlaces.append('description', byId('description_uz'));
+        restoranPlaces.append('description_uz', byId('description_uz'));
+        restoranPlaces.append('description_en', byId('description_en'));
+        restoranPlaces.append('description_ru', byId('description_ru'));
+        restoranPlaces.append('description2', byId('description2_uz'));
+        restoranPlaces.append('description2_uz', byId('description2_uz'));
+        restoranPlaces.append('description2_en', byId('description2_en'));
+        restoranPlaces.append('description2_ru', byId('description2_ru'));
+        restoranPlaces.append('description3', byId('description3_uz'));
+        restoranPlaces.append('description3_uz', byId('description3_uz'));
+        restoranPlaces.append('description3_en', byId('description3_en'));
+        restoranPlaces.append('description3_ru', byId('description3_ru'));
+        restoranPlaces.append('rank', byId('rank'));
+        restoranPlaces.append('booking_link', byId('booking_link'));
+        restoranPlaces.append('category', 5);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.post(apiTravel + "places/", restoranPlaces, config).then(() => {
             openAddModal();
             getHotelsAdmin();
             toast.success("Restoran muvaffaqiyatli qo'shildi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openAddModal();
-            // console.log(err);
         })
     }
 
     // edit
     const editRestoran = () => {
-        axios.put(apiTravel + "places/" + adminHotelId.id + "/", getRestuarantObj(), {
+        const restoranPlaces = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        restoranPlaces.append("image", byIdImg('image'));
+        if (image2 != null) restoranPlaces.append("image2", byIdImg('image2'));
+        if (image3 != null) restoranPlaces.append("image3", byIdImg('image3'));
+        if (image4 != null) restoranPlaces.append("image4", byIdImg('image4'));
+        if (image5 != null) restoranPlaces.append("image5", byIdImg('image5'));
+        if (image6 != null) restoranPlaces.append("image6", byIdImg('image6'));
+        if (image7 != null) restoranPlaces.append("image7", byIdImg('image7'));
+        if (image8 != null) restoranPlaces.append("image8", byIdImg('image8'));
+        restoranPlaces.append('title', byId('title_uz'));
+        restoranPlaces.append('title_uz', byId('title_uz'));
+        restoranPlaces.append('title_en', byId('title_en'));
+        restoranPlaces.append('title_ru', byId('title_ru'));
+        restoranPlaces.append('description', byId('description_uz'));
+        restoranPlaces.append('description_uz', byId('description_uz'));
+        restoranPlaces.append('description_en', byId('description_en'));
+        restoranPlaces.append('description_ru', byId('description_ru'));
+        restoranPlaces.append('description2', byId('description2_uz'));
+        restoranPlaces.append('description2_uz', byId('description2_uz'));
+        restoranPlaces.append('description2_en', byId('description2_en'));
+        restoranPlaces.append('description2_ru', byId('description2_ru'));
+        restoranPlaces.append('description3', byId('description3_uz'));
+        restoranPlaces.append('description3_uz', byId('description3_uz'));
+        restoranPlaces.append('description3_en', byId('description3_en'));
+        restoranPlaces.append('description3_ru', byId('description3_ru'));
+        restoranPlaces.append('rank', byId('rank'));
+        restoranPlaces.append('booking_link', byId('booking_link'));
+        restoranPlaces.append('category', 5);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.put(apiTravel + "places/" + adminHotelId.id + "/", restoranPlaces, config).then(() => {
             openEditModal();
             getHotelsAdmin();
             toast.success("Restoran muvaffaqiyatli taxrirlandi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openEditModal();
-            // console.log(err);
         })
     }
 
     // detele
     const deleteRestoran = () => {
-        axios.delete(apiTravel + "places/" + adminHotelId.id + "/", {
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.delete(apiTravel + "places/" + adminHotelId.id + "/", config).then(() => {
             openDeleteModal();
             getHotelsAdmin();
             toast.success("Restoran o'chirildi")
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi!");
             openDeleteModal();
         })
     }
@@ -244,7 +291,7 @@ function RestuarantAdmin() {
                             <Input id="title_en" placeholder="title_en" defaultValue={adminHotelId && adminHotelId.title_en} />
                             <Input id="title_uz" placeholder="title_uz" defaultValue={adminHotelId && adminHotelId.title_uz} />
                             <Input id="title_ru" placeholder="title_ru" defaultValue={adminHotelId && adminHotelId.title_ru} />
-                            <Input id="rank" type="number" placeholder="rank" defaultValue={adminHotelId && adminHotelId.rank}/>
+                            <Input id="rank" type="number" placeholder="rank" defaultValue={adminHotelId && adminHotelId.rank} />
                         </Col>
                         <Col className="col-12 col-md-8 input__title">
                             <Label for="description">Description: Majburiy</Label>

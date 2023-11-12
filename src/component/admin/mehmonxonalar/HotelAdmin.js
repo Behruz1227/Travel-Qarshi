@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Input, InputGroup, Label, Modal, ModalBody, ModalFooter, ModalHeader, Row, Table } from "reactstrap";
-import { apiTravel } from "../../api/api";
+import { apiTravel, byId, byIdImg } from "../../api/api";
 import "./style.scss";
 import { toast } from "react-toastify";
 import NavbarAdmin from "../navbar/NavbarAdmin";
@@ -28,83 +28,131 @@ function HotelAdmin() {
         axios.get(apiTravel + "places/?category=4").then(res => setAdminHotel(res.data.results));
     }
 
-    function getHotelObj() {
-        const hotelObj = new FormData();
-        hotelObj.append("image", document.getElementById('image').files[0]);
-        hotelObj.append("image2", document.getElementById('image2').files[0]);
-        hotelObj.append("image3", document.getElementById('image3').files[0]);
-        hotelObj.append("image4", document.getElementById('image4').files[0]);
-        hotelObj.append("image5", document.getElementById('image5').files[0]);
-        hotelObj.append("image6", document.getElementById('image6').files[0]);
-        hotelObj.append("image7", document.getElementById('image7').files[0]);
-        hotelObj.append("image8", document.getElementById('image8').files[0]);
-        hotelObj.append("title", document.getElementById('title_uz').value);
-        hotelObj.append("title_en", document.getElementById('title_en').value);
-        hotelObj.append("title_uz", document.getElementById('title_uz').value);
-        hotelObj.append("title_ru", document.getElementById('title_ru').value);
-        hotelObj.append("description", document.getElementById('description_uz').value);
-        hotelObj.append("description_en", document.getElementById('description_en').value);
-        hotelObj.append("description_uz", document.getElementById('description_uz').value);
-        hotelObj.append("description_ru", document.getElementById('description_ru').value);
-        hotelObj.append("description2", document.getElementById('description2_uz').value);
-        hotelObj.append("description2_en", document.getElementById('description2_en').value);
-        hotelObj.append("description2_uz", document.getElementById('description2_uz').value);
-        hotelObj.append("description2_ru", document.getElementById('description2_ru').value);
-        hotelObj.append("description3", document.getElementById('description3_uz').value);
-        hotelObj.append("description3_en", document.getElementById('description3_en').value);
-        hotelObj.append("description3_uz", document.getElementById('description3_uz').value);
-        hotelObj.append("description3_ru", document.getElementById('description3_ru').value);
-        hotelObj.append("rank", document.getElementById('rank').value);
-        hotelObj.append("booking_link", document.getElementById('booking_link').value);
-        return hotelObj;
-    }
-
     // add hotel
     const addHotels = () => {
-        axios.post(apiTravel + "places/?category=4/", getHotelObj(), {
+        const getHotelObj = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        getHotelObj.append("image", byIdImg('image'));
+        if (image2 != null) getHotelObj.append("image2", byIdImg('image2'));
+        if (image3 != null) getHotelObj.append("image3", byIdImg('image3'));
+        if (image4 != null) getHotelObj.append("image4", byIdImg('image4'));
+        if (image5 != null) getHotelObj.append("image5", byIdImg('image5'));
+        if (image6 != null) getHotelObj.append("image6", byIdImg('image6'));
+        if (image7 != null) getHotelObj.append("image7", byIdImg('image7'));
+        if (image8 != null) getHotelObj.append("image8", byIdImg('image8'));
+        getHotelObj.append('title', byId('title_uz'));
+        getHotelObj.append('title_uz', byId('title_uz'));
+        getHotelObj.append('title_en', byId('title_en'));
+        getHotelObj.append('title_ru', byId('title_ru'));
+        getHotelObj.append('description', byId('description_uz'));
+        getHotelObj.append('description_uz', byId('description_uz'));
+        getHotelObj.append('description_en', byId('description_en'));
+        getHotelObj.append('description_ru', byId('description_ru'));
+        getHotelObj.append('description2', byId('description2_uz'));
+        getHotelObj.append('description2_uz', byId('description2_uz'));
+        getHotelObj.append('description2_en', byId('description2_en'));
+        getHotelObj.append('description2_ru', byId('description2_ru'));
+        getHotelObj.append('description3', byId('description3_uz'));
+        getHotelObj.append('description3_uz', byId('description3_uz'));
+        getHotelObj.append('description3_en', byId('description3_en'));
+        getHotelObj.append('description3_ru', byId('description3_ru'));
+        getHotelObj.append('rank', byId('rank'));
+        getHotelObj.append('booking_link', byId('booking_link'));
+        getHotelObj.append('category', 4);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.post(apiTravel + "places/", getHotelObj, config).then(() => {
             openAddModal();
             getHotelsAdmin();
             toast.success("Mehmonxona muvaffaqiyatli qo'shildi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openAddModal();
-            // console.log(err);
         })
     }
 
     // edit hotel
     const editHotels = () => {
-        axios.put(apiTravel + "places/" + hotelItemId.id + "/", getHotelObj(), {
+        const getHotelObj = new FormData();
+        let image2 = byIdImg('image2'),
+            image3 = byIdImg('image3'),
+            image4 = byIdImg('image4'),
+            image5 = byIdImg('image5'),
+            image6 = byIdImg('image6'),
+            image7 = byIdImg('image7'),
+            image8 = byIdImg('image8');
+
+        getHotelObj.append("image", byIdImg('image'));
+        if (image2 != null) getHotelObj.append("image2", byIdImg('image2'));
+        if (image3 != null) getHotelObj.append("image3", byIdImg('image3'));
+        if (image4 != null) getHotelObj.append("image4", byIdImg('image4'));
+        if (image5 != null) getHotelObj.append("image5", byIdImg('image5'));
+        if (image6 != null) getHotelObj.append("image6", byIdImg('image6'));
+        if (image7 != null) getHotelObj.append("image7", byIdImg('image7'));
+        if (image8 != null) getHotelObj.append("image8", byIdImg('image8'));
+        getHotelObj.append('title', byId('title_uz'));
+        getHotelObj.append('title_uz', byId('title_uz'));
+        getHotelObj.append('title_en', byId('title_en'));
+        getHotelObj.append('title_ru', byId('title_ru'));
+        getHotelObj.append('description', byId('description_uz'));
+        getHotelObj.append('description_uz', byId('description_uz'));
+        getHotelObj.append('description_en', byId('description_en'));
+        getHotelObj.append('description_ru', byId('description_ru'));
+        getHotelObj.append('description2', byId('description2_uz'));
+        getHotelObj.append('description2_uz', byId('description2_uz'));
+        getHotelObj.append('description2_en', byId('description2_en'));
+        getHotelObj.append('description2_ru', byId('description2_ru'));
+        getHotelObj.append('description3', byId('description3_uz'));
+        getHotelObj.append('description3_uz', byId('description3_uz'));
+        getHotelObj.append('description3_en', byId('description3_en'));
+        getHotelObj.append('description3_ru', byId('description3_ru'));
+        getHotelObj.append('rank', byId('rank'));
+        getHotelObj.append('booking_link', byId('booking_link'));
+        getHotelObj.append('category', 4);
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.put(apiTravel + "places/" + hotelItemId.id + "/", getHotelObj, config).then(() => {
             openEditModal();
             getHotelsAdmin();
             toast.success("Mehmonxona muvaffaqiyatli taxrirlandi✔");
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi! Ma'lumotlarni qaytadan tekshirib ko'ring!!!");
             openEditModal();
-            // console.log(err);
         })
     }
 
     // detele hotel
     const deleteHotels = () => {
-        axios.delete(apiTravel + "places/" + hotelItemId.id + "/", {
+
+        const config = {
             headers: {
-                "Authorization": "Basic b3h1bmpvbkBnbWFpbC5jb206MjAwNQ=="
+                Authorization: sessionStorage.getItem('jwtToken'),
             }
-        }).then(() => {
+        };
+
+        axios.delete(apiTravel + "places/" + hotelItemId.id + "/", config).then(() => {
             openDeleteModal();
             getHotelsAdmin();
             toast.success("Mehmonxona o'chirildi")
         }).catch(() => {
-            toast.error("Qandaydur xatolik yuz berdi! Buning uchun sizdan uzur suraymiz!!!");
+            toast.error("So'rovda xatolik yuz berdi!");
             openDeleteModal();
         });
     }
